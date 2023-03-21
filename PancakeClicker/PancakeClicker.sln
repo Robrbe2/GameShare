@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeClicker", "PancakeClicker\PancakeClicker.csproj", "{6123C352-FE85-4D5D-AAC3-5ABF2821206C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PancakeLibrary", "PancakeLibrary\PancakeLibrary.csproj", "{C1A58DA5-00C4-47F9-B26F-27EEF561B9F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6123C352-FE85-4D5D-AAC3-5ABF2821206C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6123C352-FE85-4D5D-AAC3-5ABF2821206C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6123C352-FE85-4D5D-AAC3-5ABF2821206C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6123C352-FE85-4D5D-AAC3-5ABF2821206C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A58DA5-00C4-47F9-B26F-27EEF561B9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A58DA5-00C4-47F9-B26F-27EEF561B9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A58DA5-00C4-47F9-B26F-27EEF561B9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A58DA5-00C4-47F9-B26F-27EEF561B9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D1A3C0F-5C39-4FC4-BD07-9AB769458778}
+	EndGlobalSection
+EndGlobal
