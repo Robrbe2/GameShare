@@ -13,21 +13,28 @@ namespace PancakeClicker
 {
     public partial class Form1 : Form
     {
-        PancakeManager PancakeManager = new PancakeManager();
+        PancakeManager pancakeManager = new PancakeManager();
         public Form1()
         {
             InitializeComponent();
+            LoadBusinesses();
+        }
+
+        private void LoadBusinesses()
+        {
+            Business business = new Business();
+            pancakeManager.AddBusiness();
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             // PancakeManager.Tick();
-            labelMoney.Text = PancakeManager.Money.ToString();
+            labelMoney.Text = pancakeManager.Money.ToString();
         }
 
         private void buttonPancake_Click(object sender, EventArgs e)
         {
-            PancakeManager.ButtonClick();
+            pancakeManager.ButtonClick();
         }
     }
 }
