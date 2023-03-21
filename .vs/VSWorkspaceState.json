@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ClickerGame",
+    "\\ClickerGame\\CookieLibrary"
   ],
+  "SelectedNode": "\\ClickerGame\\ClickerGame.sln",
   "PreviewInSolutionExplorer": false
 }
