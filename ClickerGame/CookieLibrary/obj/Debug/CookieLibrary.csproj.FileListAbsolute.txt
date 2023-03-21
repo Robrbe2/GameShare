@@ -1,0 +1,6 @@
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\obj\Debug\CookieLibrary.csproj.AssemblyReference.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\obj\Debug\CookieLibrary.csproj.CoreCompileInputs.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\bin\Debug\CookieLibrary.dll
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\bin\Debug\CookieLibrary.pdb
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\obj\Debug\CookieLibrary.dll
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\CookieLibrary\obj\Debug\CookieLibrary.pdb

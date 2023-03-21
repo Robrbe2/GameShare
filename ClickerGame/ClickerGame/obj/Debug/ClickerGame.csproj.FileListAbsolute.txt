@@ -1,0 +1,14 @@
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\bin\Debug\ClickerGame.exe.config
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\bin\Debug\ClickerGame.exe
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\bin\Debug\ClickerGame.pdb
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.AssemblyReference.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.Form1.resources
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.Properties.Resources.resources
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.GenerateResource.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.CoreCompileInputs.cache
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.exe
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.pdb
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\bin\Debug\CookieLibrary.dll
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\bin\Debug\CookieLibrary.pdb
+C:\Users\JornDeWolf\source\repos\oscarromerocollege\ind-jorndewolf\17ClickerGame\ClickerGame\obj\Debug\ClickerGame.csproj.CopyComplete
