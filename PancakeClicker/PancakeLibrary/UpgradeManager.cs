@@ -24,7 +24,7 @@ namespace PancakeLibrary
 
         public int ClickAmount()
         {
-            if (boughtUpgrades.Find(x => x.Naam == "Valuex2").Naam == "Valuex2")
+            if (boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
                 return 2;
             else
                 return 1;
