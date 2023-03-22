@@ -33,9 +33,10 @@ namespace PancakeClicker
             labelMoney.Text = pancakeManager.Money.ToString();
         }
 
-        private void buttonPancake_Click(object sender, EventArgs e)
+        private void buttonPancake_Click(object sender, MouseEventArgs e)
         {
             pancakeManager.ButtonClick();
+
         }
     }
 }

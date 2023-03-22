@@ -50,7 +50,7 @@
             this.buttonPancake.Tag = "";
             this.buttonPancake.Text = "Pancake";
             this.buttonPancake.UseVisualStyleBackColor = true;
-            this.buttonPancake.Click += new System.EventHandler(this.buttonPancake_Click);
+            this.buttonPancake.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonPancake_Click);
             // 
             // label1
             // 
