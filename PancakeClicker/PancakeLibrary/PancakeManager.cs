@@ -28,6 +28,7 @@ namespace PancakeLibrary
                 moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
                 moneyPerTick += moneyPerTickBusiness * business.Amount;
             }
+            AddMoney(moneyPerTick);
         }
         public void AddMoney(decimal amount) 
         {

@@ -18,7 +18,6 @@ namespace PancakeClicker
         {
             InitializeComponent();
             LoadBusinesses();
-            labelTesting.Text = pancakeManager.OwnedBusinesses[0].Name.ToString();
         }
 
         private void LoadBusinesses()
@@ -29,13 +28,24 @@ namespace PancakeClicker
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            // PancakeManager.Tick();
-            labelMoney.Text = pancakeManager.Money.ToString();
+            pancakeManager.Tick();
+            labelMoney.Text = pancakeManager.Money.ToString("0.00");
+            labelClickerMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0])).ToString();
+            labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();
         }
 
         private void buttonPancake_Click(object sender, EventArgs e)
         {
             pancakeManager.ButtonClick();
+        }
+
+        private void buyBusiness_Click(object sender, EventArgs e)
+        {
+            if (sender == null)
+                return;
+
+            Button buyButton = (Button)sender;
+            pancakeManager.BuyBusinesses(int.Parse((string)buyButton.Tag), 1) ;
         }
     }
 }

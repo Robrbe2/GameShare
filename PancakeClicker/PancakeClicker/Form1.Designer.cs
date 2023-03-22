@@ -33,7 +33,10 @@
             this.buttonPancake = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelMoney = new System.Windows.Forms.Label();
-            this.labelTesting = new System.Windows.Forms.Label();
+            this.labelClickerMoney = new System.Windows.Forms.Label();
+            this.buttonClicker = new System.Windows.Forms.Button();
+            this.buttonGrandma = new System.Windows.Forms.Button();
+            this.labelClickerAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -70,21 +73,55 @@
             this.labelMoney.TabIndex = 2;
             this.labelMoney.Text = "0";
             // 
-            // labelTesting
+            // labelClickerMoney
             // 
-            this.labelTesting.AutoSize = true;
-            this.labelTesting.Location = new System.Drawing.Point(151, 140);
-            this.labelTesting.Name = "labelTesting";
-            this.labelTesting.Size = new System.Drawing.Size(18, 20);
-            this.labelTesting.TabIndex = 3;
-            this.labelTesting.Text = "T";
+            this.labelClickerMoney.AutoSize = true;
+            this.labelClickerMoney.Location = new System.Drawing.Point(151, 172);
+            this.labelClickerMoney.Name = "labelClickerMoney";
+            this.labelClickerMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerMoney.TabIndex = 3;
+            this.labelClickerMoney.Text = "T";
+            // 
+            // buttonClicker
+            // 
+            this.buttonClicker.Location = new System.Drawing.Point(12, 172);
+            this.buttonClicker.Name = "buttonClicker";
+            this.buttonClicker.Size = new System.Drawing.Size(133, 51);
+            this.buttonClicker.TabIndex = 4;
+            this.buttonClicker.Tag = "1";
+            this.buttonClicker.Text = "Buy Clicker";
+            this.buttonClicker.UseVisualStyleBackColor = true;
+            this.buttonClicker.Click += new System.EventHandler(this.buyBusiness_Click);
+            // 
+            // buttonGrandma
+            // 
+            this.buttonGrandma.Location = new System.Drawing.Point(12, 229);
+            this.buttonGrandma.Name = "buttonGrandma";
+            this.buttonGrandma.Size = new System.Drawing.Size(133, 51);
+            this.buttonGrandma.TabIndex = 5;
+            this.buttonGrandma.Tag = "2";
+            this.buttonGrandma.Text = "Buy Grandma";
+            this.buttonGrandma.UseVisualStyleBackColor = true;
+            this.buttonGrandma.Click += new System.EventHandler(this.buyBusiness_Click);
+            // 
+            // labelClickerAmount
+            // 
+            this.labelClickerAmount.AutoSize = true;
+            this.labelClickerAmount.Location = new System.Drawing.Point(151, 203);
+            this.labelClickerAmount.Name = "labelClickerAmount";
+            this.labelClickerAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerAmount.TabIndex = 6;
+            this.labelClickerAmount.Text = "T";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelTesting);
+            this.Controls.Add(this.labelClickerAmount);
+            this.Controls.Add(this.buttonGrandma);
+            this.Controls.Add(this.buttonClicker);
+            this.Controls.Add(this.labelClickerMoney);
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPancake);
@@ -101,7 +138,10 @@
         private System.Windows.Forms.Button buttonPancake;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelMoney;
-        private System.Windows.Forms.Label labelTesting;
+        private System.Windows.Forms.Label labelClickerMoney;
+        private System.Windows.Forms.Button buttonClicker;
+        private System.Windows.Forms.Button buttonGrandma;
+        private System.Windows.Forms.Label labelClickerAmount;
     }
 }
 
