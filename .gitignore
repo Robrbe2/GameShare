@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/PancakeClicker/.vs/PancakeClicker/v17/.suo
+/PancakeClicker/PancakeLibrary/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
