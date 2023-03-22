@@ -14,11 +14,11 @@ namespace PancakeLibrary
     {
         public decimal Money;
         private UpgradeManager UpgradeManager;
-        public PancakeManager()
+        public PancakeManager(UpgradeManager UM)
         {
             Money = 0;
             OwnedBusinesses = new List<Business>();
-            UpgradeManager = new UpgradeManager();
+            UpgradeManager = UM;
         }
         public List<Business> OwnedBusinesses { get; set; }
         public void Tick()
@@ -102,6 +102,7 @@ namespace PancakeLibrary
             if(UpgradeManager.upgrades.Contains(upgrade) && Money >= upgrade.Prijs)
             {
                 UpgradeManager.BuyUpgrade(upgrade);
+                RemoveMoney(upgrade.Prijs);
                 return true;
             }
             else

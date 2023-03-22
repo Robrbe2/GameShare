@@ -14,11 +14,13 @@ namespace PancakeClicker
 {
     public partial class Form1 : Form
     {
-        PancakeManager pancakeManager = new PancakeManager();
-        UpgradeManager upgradeManager = new UpgradeManager();
+        UpgradeManager upgradeManager;
+        PancakeManager pancakeManager;
         public Form1()
         {
             InitializeComponent();
+            upgradeManager = new UpgradeManager();
+            pancakeManager = new PancakeManager(upgradeManager);
             LoadBusinesses();
             LoadUpgrades();
         }
