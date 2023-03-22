@@ -18,12 +18,12 @@ namespace PancakeClicker
         {
             InitializeComponent();
             LoadBusinesses();
-            labelTesting.Text = pancakeManager.OwnedBusinesses[0].Business.Name.ToString();
+            labelTesting.Text = pancakeManager.OwnedBusinesses[0].Name.ToString();
         }
 
         private void LoadBusinesses()
         {
-            Business business = new Business(1, "Clicker", "A basic pancake clicker", 15, (decimal)0.1);
+            Business business = new Business(1, "Pancake Clicker", "A basic pancake clicker", 15, (decimal)0.1);
             pancakeManager.AddBusiness(business);
         }
 
