@@ -3,8 +3,8 @@
     "",
     "\\PancakeClicker",
     "\\PancakeClicker\\PancakeClicker",
-    "\\PancakeClicker\\PancakeLibrary"
+    "\\PancakeClicker\\PancakeClicker\\Properties"
   ],
-  "SelectedNode": "\\PancakeClicker\\PancakeLibrary\\PancakeManager.cs",
+  "SelectedNode": "\\PancakeClicker\\PancakeClicker.sln",
   "PreviewInSolutionExplorer": false
 }
