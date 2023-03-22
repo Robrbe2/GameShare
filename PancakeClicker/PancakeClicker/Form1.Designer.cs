@@ -37,6 +37,7 @@
             this.buttonClicker = new System.Windows.Forms.Button();
             this.buttonGrandma = new System.Windows.Forms.Button();
             this.labelClickerAmount = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -46,9 +47,10 @@
             // 
             // buttonPancake
             // 
-            this.buttonPancake.Location = new System.Drawing.Point(12, 12);
+            this.buttonPancake.Location = new System.Drawing.Point(11, 10);
+            this.buttonPancake.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPancake.Name = "buttonPancake";
-            this.buttonPancake.Size = new System.Drawing.Size(133, 125);
+            this.buttonPancake.Size = new System.Drawing.Size(118, 100);
             this.buttonPancake.TabIndex = 0;
             this.buttonPancake.Tag = "";
             this.buttonPancake.Text = "Pancake";
@@ -58,35 +60,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 34);
+            this.label1.Location = new System.Drawing.Point(134, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pancakes:";
             // 
             // labelMoney
             // 
             this.labelMoney.AutoSize = true;
-            this.labelMoney.Location = new System.Drawing.Point(240, 34);
+            this.labelMoney.Location = new System.Drawing.Point(213, 27);
             this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelMoney.Size = new System.Drawing.Size(14, 16);
             this.labelMoney.TabIndex = 2;
             this.labelMoney.Text = "0";
             // 
             // labelClickerMoney
             // 
             this.labelClickerMoney.AutoSize = true;
-            this.labelClickerMoney.Location = new System.Drawing.Point(151, 172);
+            this.labelClickerMoney.Location = new System.Drawing.Point(134, 138);
             this.labelClickerMoney.Name = "labelClickerMoney";
-            this.labelClickerMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerMoney.Size = new System.Drawing.Size(16, 16);
             this.labelClickerMoney.TabIndex = 3;
             this.labelClickerMoney.Text = "T";
             // 
             // buttonClicker
             // 
-            this.buttonClicker.Location = new System.Drawing.Point(12, 172);
+            this.buttonClicker.Location = new System.Drawing.Point(11, 138);
+            this.buttonClicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonClicker.Name = "buttonClicker";
-            this.buttonClicker.Size = new System.Drawing.Size(133, 51);
+            this.buttonClicker.Size = new System.Drawing.Size(118, 41);
             this.buttonClicker.TabIndex = 4;
             this.buttonClicker.Tag = "1";
             this.buttonClicker.Text = "Buy Clicker";
@@ -95,9 +98,10 @@
             // 
             // buttonGrandma
             // 
-            this.buttonGrandma.Location = new System.Drawing.Point(12, 229);
+            this.buttonGrandma.Location = new System.Drawing.Point(11, 183);
+            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGrandma.Name = "buttonGrandma";
-            this.buttonGrandma.Size = new System.Drawing.Size(133, 51);
+            this.buttonGrandma.Size = new System.Drawing.Size(118, 41);
             this.buttonGrandma.TabIndex = 5;
             this.buttonGrandma.Tag = "2";
             this.buttonGrandma.Text = "Buy Grandma";
@@ -107,17 +111,28 @@
             // labelClickerAmount
             // 
             this.labelClickerAmount.AutoSize = true;
-            this.labelClickerAmount.Location = new System.Drawing.Point(151, 203);
+            this.labelClickerAmount.Location = new System.Drawing.Point(134, 162);
             this.labelClickerAmount.Name = "labelClickerAmount";
-            this.labelClickerAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerAmount.Size = new System.Drawing.Size(16, 16);
             this.labelClickerAmount.TabIndex = 6;
             this.labelClickerAmount.Text = "T";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(513, 10);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(186, 212);
+            this.listBox1.TabIndex = 7;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_MouseClick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.labelClickerAmount);
             this.Controls.Add(this.buttonGrandma);
             this.Controls.Add(this.buttonClicker);
@@ -125,6 +140,7 @@
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPancake);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Pancake Clicker";
             this.ResumeLayout(false);
@@ -142,6 +158,7 @@
         private System.Windows.Forms.Button buttonClicker;
         private System.Windows.Forms.Button buttonGrandma;
         private System.Windows.Forms.Label labelClickerAmount;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
