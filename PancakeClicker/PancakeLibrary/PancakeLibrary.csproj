@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business.cs" />
-    <Compile Include="BusinessAmount.cs" />
     <Compile Include="PancakeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

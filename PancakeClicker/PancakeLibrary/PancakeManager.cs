@@ -16,17 +16,17 @@ namespace PancakeLibrary
         public PancakeManager()
         {
             Money = 0;
-            OwnedBusinesses = new List<BusinessAmount>();
+            OwnedBusinesses = new List<Business>();
         }
-        public List<BusinessAmount> OwnedBusinesses { get; set; }
+        public List<Business> OwnedBusinesses { get; set; }
         public void Tick()
         {
             decimal moneyPerTick = 0;
             decimal moneyPerTickBusiness;
-            foreach (BusinessAmount businessAmount in OwnedBusinesses)
+            foreach (Business business in OwnedBusinesses)
             {
-                moneyPerTickBusiness = businessAmount.Business.InitialMoneyPerSecond / 10;
-                moneyPerTick += moneyPerTickBusiness * businessAmount.Amount;
+                moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                moneyPerTick += moneyPerTickBusiness * business.Amount;
             }
         }
         public void AddMoney(decimal amount) 
@@ -42,7 +42,7 @@ namespace PancakeLibrary
             int index = GetIndex(id);
             if (index < 0)
                 return false;
-            BusinessAmount ownedBusiness = OwnedBusinesses[index];
+            Business ownedBusiness = OwnedBusinesses[index];
 
             decimal amountOwned = CostPriceForMany(ownedBusiness, amount);
             if (Money >= amountOwned)
@@ -55,7 +55,7 @@ namespace PancakeLibrary
                 return false;
         }
 
-        public decimal CostPriceForMany(BusinessAmount ownedBusiness, int amount)
+        public decimal CostPriceForMany(Business ownedBusiness, int amount)
         {
             decimal price = 0;
             for (int i = 0; i < amount; i++)
@@ -65,12 +65,14 @@ namespace PancakeLibrary
             return price;
         }
 
-        public decimal CostPriceForOne(BusinessAmount businessAmount)
+        public decimal CostPriceForOne(Business business)
         {
             decimal cost;
             int discountedPrice = 100;
 
-            cost = (decimal)(businessAmount.Business.InitialPrice * Math.Pow(1.15, businessAmount.Amount));
+            cost = (decimal)(business.InitialPrice * Math.Pow(1.15, business.Amount));
+
+            cost = cost * (decimal)(discountedPrice / 100);
 
             return cost;
         }
@@ -88,7 +90,7 @@ namespace PancakeLibrary
         public void AddBusiness(Business business)
         {
             
-            OwnedBusinesses.Add(new BusinessAmount(business));
+            OwnedBusinesses.Add(business);
         }
     }
 }

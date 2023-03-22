@@ -21,5 +21,6 @@ namespace PancakeLibrary
         public string Description { get; set; }
         public int InitialPrice { get; set; }
         public decimal InitialMoneyPerSecond { get; set; }
+        public uint Amount { get; set; }
     }
 }
