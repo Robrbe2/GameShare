@@ -12,3 +12,17 @@ C:\Users\SeppeVanNuffel\Source\Repos\GameShare\PancakeClicker\PancakeClicker\obj
 C:\Users\SeppeVanNuffel\Source\Repos\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.CopyComplete
 C:\Users\SeppeVanNuffel\Source\Repos\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.exe
 C:\Users\SeppeVanNuffel\Source\Repos\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.pdb
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.AssemblyReference.cache
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.SuggestedBindingRedirects.cache
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.Form1.resources
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.Properties.Resources.resources
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.GenerateResource.cache
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.CoreCompileInputs.cache
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.exe
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.pdb
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\bin\Debug\PancakeClicker.exe.config
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\bin\Debug\PancakeClicker.exe
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\bin\Debug\PancakeClicker.pdb
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\bin\Debug\PancakeLibrary.dll
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\bin\Debug\PancakeLibrary.pdb
+C:\Users\JornDeWolf\Source\Repos\Seppe-VanNuffel\GameShare\PancakeClicker\PancakeClicker\obj\Debug\PancakeClicker.csproj.CopyComplete

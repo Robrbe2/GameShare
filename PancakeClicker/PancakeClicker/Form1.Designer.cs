@@ -33,6 +33,7 @@
             this.buttonPancake = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelMoney = new System.Windows.Forms.Label();
+            this.labelTesting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -69,11 +70,21 @@
             this.labelMoney.TabIndex = 2;
             this.labelMoney.Text = "0";
             // 
+            // labelTesting
+            // 
+            this.labelTesting.AutoSize = true;
+            this.labelTesting.Location = new System.Drawing.Point(151, 140);
+            this.labelTesting.Name = "labelTesting";
+            this.labelTesting.Size = new System.Drawing.Size(18, 20);
+            this.labelTesting.TabIndex = 3;
+            this.labelTesting.Text = "T";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTesting);
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPancake);
@@ -90,6 +101,7 @@
         private System.Windows.Forms.Button buttonPancake;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelMoney;
+        private System.Windows.Forms.Label labelTesting;
     }
 }
 

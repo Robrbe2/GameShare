@@ -84,5 +84,11 @@ namespace PancakeLibrary
         {
             Money += 1;
         }
+
+        public void AddBusiness(Business business)
+        {
+            
+            OwnedBusinesses.Add(new BusinessAmount(business));
+        }
     }
 }
