@@ -18,17 +18,16 @@ namespace PancakeLibrary
         /// <param name="upgrades">the upgrades that the user bought</param>
         public UpgradeManager()
         {
-            boughtUpgrades = new List<Upgrades>();
             upgrades = new List<Upgrades>();
+            boughtUpgrades = new List<Upgrades>();
         }
 
         public int ClickAmount()
         {
-            int amount = 1;
-            if (boughtUpgrades.Contains(new Upgrades("Valuex5", 250)))
-                amount = 2;
-
-            return amount;
+            if (boughtUpgrades.Find(x => x.Naam == "Valuex2").Naam == "Valuex2")
+                return 2;
+            else
+                return 1;
         }
 
         public void AddUpgrade(Upgrades upgrade)
