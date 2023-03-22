@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievement.cs" />
+    <Compile Include="AchievementsManager.cs" />
     <Compile Include="Business.cs" />
     <Compile Include="UpgradeManager.cs" />
     <Compile Include="PancakeManager.cs" />
