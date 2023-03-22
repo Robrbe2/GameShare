@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PancakeClicker",
+    "\\PancakeClicker\\PancakeClicker",
+    "\\PancakeClicker\\PancakeLibrary"
   ],
-  "SelectedNode": "\\C:\\Users\\SeppeVanNuffel\\Source\\Repos\\GameShare",
+  "SelectedNode": "\\PancakeClicker\\PancakeLibrary\\PancakeManager.cs",
   "PreviewInSolutionExplorer": false
 }
