@@ -363,3 +363,11 @@ MigrationBackup/
 FodyWeavers.xsd
 /PancakeClicker/.vs/PancakeClicker/v17/.suo
 /PancakeClicker/PancakeLibrary/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/PancakeClicker/PancakeLibrary/bin/Debug/PancakeLibrary.dll
+/PancakeClicker/PancakeLibrary/bin/Debug/PancakeLibrary.pdb
+/PancakeClicker/PancakeLibrary/obj/Debug/PancakeLibrary.csproj.CoreCompileInputs.cache
+/PancakeClicker/PancakeLibrary/obj/Debug/PancakeLibrary.dll
+/PancakeClicker/PancakeLibrary/obj/Debug/PancakeLibrary.pdb
+/PancakeClicker/PancakeClicker/obj/Debug/PancakeClicker.csproj.AssemblyReference.cache
+/PancakeClicker/PancakeClicker/obj/Debug/PancakeClicker.csproj.CoreCompileInputs.cache
+/PancakeClicker/PancakeClicker/obj/Debug/PancakeClicker.csproj.GenerateResource.cache
