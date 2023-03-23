@@ -386,3 +386,5 @@ FodyWeavers.xsd
 /PancakeClicker/PancakeLibrary/obj/Debug/PancakeLibrary.csproj.FileListAbsolute.txt
 /PancakeClicker/PancakeClicker/bin/Debug/PancakeClicker.exe.config
 /PancakeClicker/PancakeLibrary/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/PancakeClicker/PancakeLibrary/obj/Release/PancakeLibrary.csproj.AssemblyReference.cache
+/.vs/VSWorkspaceState.json
