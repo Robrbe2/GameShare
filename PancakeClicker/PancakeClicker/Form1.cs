@@ -103,8 +103,8 @@ namespace PancakeClicker
             upgrade = new Upgrades("Stronger Grandma", 100);
             upgradeManager.AddUpgrade(upgrade);
 
-            upgradeManager.Sort();
-            foreach (var item in upgradeManager.upgrades)
+            List<Upgrades> upgradesList = new List<Upgrades>(upgradeManager.Sort());
+            foreach (var item in upgradesList)
             {
                 listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
             }

@@ -29,13 +29,6 @@ namespace PancakeLibrary
             else
                 return 1;
         }
-        public int BusinessClickAmount()
-        {
-            if (boughtUpgrades.Find(x => x.Naam == "StrongerGrandma") != null)
-                return 2;
-            else
-                return 1;
-        }
 
         public void AddUpgrade(Upgrades upgrade)
         {
@@ -48,9 +41,10 @@ namespace PancakeLibrary
             upgrades.Remove(upgrade);
         }
 
-        public void Sort()
+        public List<Upgrades> Sort()
         {
-            upgrades = upgrades.OrderBy(x => x.Prijs).ToList<Upgrades>(); ;
+            upgrades = upgrades.OrderBy(x => x.Prijs).ToList<Upgrades>();
+            return upgrades;
         }
     }
 }
