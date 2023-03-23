@@ -27,8 +27,84 @@ namespace PancakeClicker
 
         private void LoadBusinesses()
         {
-            Business business = new Business(1, "Pancake Clicker", "A basic pancake clicker", 15, (decimal)0.1);
-            pancakeManager.AddBusiness(business);
+            List<Business> businesses= new List<Business>();
+            businesses.Add(new Business(
+                1,
+                "Pancake Clicker",
+                "A basic pancake clicker",
+                15,
+                (decimal)0.1));
+            businesses.Add(new Business(
+                2,
+                "Grandma",
+                "",
+                100,
+                5));
+            businesses.Add(new Business(
+                3,
+                "Baker",
+                "",
+                1000,
+                50));
+            businesses.Add(new Business(
+                4,
+                "Farm",
+                "",
+                10000,
+                300));
+            businesses.Add(new Business(
+                5,
+                "Factory",
+                "",
+                161000,
+                1000));
+            businesses.Add(new Business(
+                6,
+                "Temple",
+                "",
+                3800000,
+                20000));
+            businesses.Add(new Business(
+                7,
+                "Magic tower",
+                "",
+                86500000,
+                100000));
+            businesses.Add(new Business(
+                8,
+                "Alchemy lab",
+                "",
+                947000000,
+                560000));
+            businesses.Add(new Business(
+                9,
+                "Portal",
+                "",
+                9132000000,
+                9600000));
+            businesses.Add(new Business(
+                10,
+                "Time portal",
+                "",
+                91231000000,
+                10000000));
+            businesses.Add(new Business(
+                11,
+                "Antipancake condenser",
+                "",
+                313920000000,
+                560000000));
+            businesses.Add(new Business(
+                12,
+                "PanScript Console",
+                "",
+                9391032010000,
+                640000000));
+
+            foreach (Business item in businesses)
+            {
+                pancakeManager.AddBusiness(item);
+            }
         }
 
         private void LoadUpgrades()
