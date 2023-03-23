@@ -27,10 +27,35 @@ namespace PancakeLibrary
             decimal moneyPerTickBusiness;
             foreach (Business business in OwnedBusinesses)
             {
-                if(business != new Business(1, "Pancake Clicker", "A basic pancake clicker", 15, (decimal)0.1)) 
+                if(business == OwnedBusinesses.Find(x => x.Id == 1)) 
                 {
-                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    if (UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
+                    {
+
+                        moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                        moneyPerTickBusiness = moneyPerTickBusiness * 2;
+                        moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    }
+                    else
+                    {
+                        moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                        moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    }
+                }
+                else if (business == OwnedBusinesses.Find(x => x.Id == 2))
+                {
+                    if (UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
+                    {
+
+                        moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                        moneyPerTickBusiness = moneyPerTickBusiness * 1.5M;
+                        moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    }
+                    else
+                    {
+                        moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                        moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    }
                 }
                 else
                 {

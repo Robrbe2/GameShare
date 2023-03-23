@@ -100,7 +100,7 @@ namespace PancakeClicker
         {
             Upgrades upgrade = new Upgrades("Valuex2", 250);
             upgradeManager.AddUpgrade(upgrade);
-            upgrade = new Upgrades("StrongerGrandma", 100);
+            upgrade = new Upgrades("Stronger Grandma", 100);
             upgradeManager.AddUpgrade(upgrade);
 
             upgradeManager.Sort();
