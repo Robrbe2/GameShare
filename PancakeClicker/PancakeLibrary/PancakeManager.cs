@@ -16,7 +16,7 @@ namespace PancakeLibrary
         private UpgradeManager UpgradeManager;
         public PancakeManager(UpgradeManager UM)
         {
-            Money = 250;
+            Money = 25000;
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
         }
@@ -73,7 +73,7 @@ namespace PancakeLibrary
             decimal cost;
             int discountedPrice = 100;
 
-            cost = (decimal)(business.InitialPrice * Math.Pow(1.15, business.Amount));
+            cost = (decimal)(business.InitialPrice * (decimal)Math.Pow(1.15, business.Amount));
 
             cost = cost * (decimal)(discountedPrice / 100);
 
