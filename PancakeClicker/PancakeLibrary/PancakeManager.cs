@@ -21,16 +21,25 @@ namespace PancakeLibrary
             UpgradeManager = UM;
         }
         public List<Business> OwnedBusinesses { get; set; }
-        public void Tick()
+        public decimal Tick()
         {
             decimal moneyPerTick = 0;
             decimal moneyPerTickBusiness;
             foreach (Business business in OwnedBusinesses)
             {
-                moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-                moneyPerTick += moneyPerTickBusiness * business.Amount;
+                if(business != new Business(1, "Pancake Clicker", "A basic pancake clicker", 15, (decimal)0.1)) 
+                {
+                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                }
+                else
+                {
+                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                }
             }
             AddMoney(moneyPerTick);
+            return moneyPerTick;
         }
         public void AddMoney(decimal amount) 
         {
@@ -90,11 +99,6 @@ namespace PancakeLibrary
             Money += UpgradeManager.ButtonClickAmount();
         }
 
-        public void BusinessClick()
-        {
-            Money += UpgradeManager.BusinessClickAmount();
-        }
-
         public void AddBusiness(Business business)
         {
             
@@ -103,7 +107,7 @@ namespace PancakeLibrary
 
         public bool BuyUpgrade(object OBJupgrade)
        {
-            Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Naam == OBJupgrade);
+            Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Naam == OBJupgrade.ToString());
             if(UpgradeManager.upgrades.Contains(upgrade) && Money >= upgrade.Prijs)
             {
                 UpgradeManager.BuyUpgrade(upgrade);

@@ -27,79 +27,68 @@ namespace PancakeClicker
 
         private void LoadBusinesses()
         {
-            List<Business> businesses= new List<Business>();
-            businesses.Add(new Business(
+            List<Business> businesses = new List<Business>() { new Business(
                 1,
                 "Pancake Clicker",
                 "A basic pancake clicker",
                 15,
-                (decimal)0.1));
-            businesses.Add(new Business(
+                0.1M), new Business(
                 2,
                 "Grandma",
                 "",
                 100,
-                5));
-            businesses.Add(new Business(
+                5), new Business(
                 3,
                 "Baker",
                 "",
                 1000,
-                50));
-            businesses.Add(new Business(
+                50), new Business(
                 4,
                 "Farm",
                 "",
                 10000,
-                300));
-            businesses.Add(new Business(
+                300), new Business(
                 5,
                 "Factory",
                 "",
                 161000,
-                1000));
-            businesses.Add(new Business(
+                1000), new Business(
                 6,
                 "Temple",
                 "",
                 3800000,
-                20000));
-            businesses.Add(new Business(
+                20000),new Business(
                 7,
                 "Magic tower",
                 "",
                 86500000,
-                100000));
-            businesses.Add(new Business(
+                100000), new Business(
                 8,
                 "Alchemy lab",
                 "",
                 947000000,
-                560000));
-            businesses.Add(new Business(
+                560000), new Business(
                 9,
                 "Portal",
                 "",
                 9132000000,
-                9600000));
-            businesses.Add(new Business(
+                9600000), new Business(
                 10,
                 "Time portal",
                 "",
                 91231000000,
-                10000000));
-            businesses.Add(new Business(
+                10000000), new Business(
                 11,
                 "Antipancake condenser",
                 "",
                 313920000000,
-                560000000));
-            businesses.Add(new Business(
+                560000000), new Business(
                 12,
                 "PanScript Console",
                 "",
                 9391032010000,
-                640000000));
+                640000000)
+            };
 
             foreach (Business item in businesses)
             {
@@ -123,7 +112,7 @@ namespace PancakeClicker
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            pancakeManager.Tick();
+            labelMoneyPerTick.Text = pancakeManager.Tick().ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
             labelClickerMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0])).ToString();
             labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();

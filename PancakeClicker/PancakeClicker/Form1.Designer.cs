@@ -41,6 +41,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeaderUpgrade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelMoneyPerTick = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -73,7 +75,7 @@
             // labelMoney
             // 
             this.labelMoney.AutoSize = true;
-            this.labelMoney.Location = new System.Drawing.Point(160, 22);
+            this.labelMoney.Location = new System.Drawing.Point(182, 22);
             this.labelMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMoney.Name = "labelMoney";
             this.labelMoney.Size = new System.Drawing.Size(13, 13);
@@ -150,11 +152,31 @@
             this.columnHeaderPrijs.Text = "Prijs";
             this.columnHeaderPrijs.Width = 91;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(103, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Money per tick:";
+            // 
+            // labelMoneyPerTick
+            // 
+            this.labelMoneyPerTick.AutoSize = true;
+            this.labelMoneyPerTick.Location = new System.Drawing.Point(182, 39);
+            this.labelMoneyPerTick.Name = "labelMoneyPerTick";
+            this.labelMoneyPerTick.Size = new System.Drawing.Size(13, 13);
+            this.labelMoneyPerTick.TabIndex = 10;
+            this.labelMoneyPerTick.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.labelMoneyPerTick);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.labelClickerAmount);
             this.Controls.Add(this.buttonGrandma);
@@ -185,6 +207,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeaderUpgrade;
         private System.Windows.Forms.ColumnHeader columnHeaderPrijs;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelMoneyPerTick;
     }
 }
 
