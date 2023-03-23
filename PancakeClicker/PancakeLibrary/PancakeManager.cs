@@ -16,7 +16,7 @@ namespace PancakeLibrary
         private UpgradeManager UpgradeManager;
         public PancakeManager(UpgradeManager UM)
         {
-            Money = 0;
+            Money = 250;
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
         }
@@ -87,7 +87,12 @@ namespace PancakeLibrary
 
         public void ButtonClick()
         {
-            Money += UpgradeManager.ClickAmount();
+            Money += UpgradeManager.ButtonClickAmount();
+        }
+
+        public void BusinessClick()
+        {
+            Money += UpgradeManager.BusinessClickAmount();
         }
 
         public void AddBusiness(Business business)
@@ -97,8 +102,8 @@ namespace PancakeLibrary
         }
 
         public bool BuyUpgrade(object OBJupgrade)
-        {
-            Upgrades upgrade = UpgradeManager.upgrades.Find(x => x.Naam == OBJupgrade.ToString());
+       {
+            Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Naam == OBJupgrade);
             if(UpgradeManager.upgrades.Contains(upgrade) && Money >= upgrade.Prijs)
             {
                 UpgradeManager.BuyUpgrade(upgrade);

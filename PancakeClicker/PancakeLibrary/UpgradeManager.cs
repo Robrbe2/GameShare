@@ -22,9 +22,16 @@ namespace PancakeLibrary
             boughtUpgrades = new List<Upgrades>();
         }
 
-        public int ClickAmount()
+        public int ButtonClickAmount()
         {
             if (boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
+                return 2;
+            else
+                return 1;
+        }
+        public int BusinessClickAmount()
+        {
+            if (boughtUpgrades.Find(x => x.Naam == "StrongerGrandma") != null)
                 return 2;
             else
                 return 1;
@@ -39,6 +46,11 @@ namespace PancakeLibrary
         {
             boughtUpgrades.Add(upgrade);
             upgrades.Remove(upgrade);
+        }
+
+        public void Sort()
+        {
+            upgrades = upgrades.OrderBy(x => x.Prijs).ToList<Upgrades>(); ;
         }
     }
 }

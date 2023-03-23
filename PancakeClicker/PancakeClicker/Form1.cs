@@ -35,7 +35,14 @@ namespace PancakeClicker
         {
             Upgrades upgrade = new Upgrades("Valuex2", 250);
             upgradeManager.AddUpgrade(upgrade);
-            listBox1.Items.Add(upgrade.ToString());
+            upgrade = new Upgrades("StrongerGrandma", 100);
+            upgradeManager.AddUpgrade(upgrade);
+
+            upgradeManager.Sort();
+            foreach (var item in upgradeManager.upgrades)
+            {
+                listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -49,7 +56,6 @@ namespace PancakeClicker
         private void buttonPancake_Click(object sender, MouseEventArgs e)
         {
             pancakeManager.ButtonClick();
-
         }
 
         private void buyBusiness_Click(object sender, EventArgs e)
@@ -61,10 +67,16 @@ namespace PancakeClicker
             pancakeManager.BuyBusinesses(int.Parse((string)buyButton.Tag), 1) ;
         }
 
-        private void listBox1_MouseClick(object sender, EventArgs e)
+        private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (pancakeManager.BuyUpgrade(listBox1.SelectedItem))
-                listBox1.Items.Remove(listBox1.SelectedItem);
+            if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
+            {
+                listView1.Items.Clear();
+                foreach (var item in upgradeManager.upgrades)
+                {
+                    listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
+                }
+            }
         }
     }
 }

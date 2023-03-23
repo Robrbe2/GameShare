@@ -37,8 +37,10 @@
             this.buttonClicker = new System.Windows.Forms.Button();
             this.buttonGrandma = new System.Windows.Forms.Button();
             this.labelClickerAmount = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeaderUpgrade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // timer1
@@ -49,7 +51,7 @@
             // buttonPancake
             // 
             this.buttonPancake.Location = new System.Drawing.Point(8, 8);
-            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPancake.Name = "buttonPancake";
             this.buttonPancake.Size = new System.Drawing.Size(88, 81);
             this.buttonPancake.TabIndex = 0;
@@ -91,7 +93,7 @@
             // buttonClicker
             // 
             this.buttonClicker.Location = new System.Drawing.Point(8, 112);
-            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClicker.Name = "buttonClicker";
             this.buttonClicker.Size = new System.Drawing.Size(88, 33);
             this.buttonClicker.TabIndex = 4;
@@ -104,7 +106,7 @@
             // buttonGrandma
             // 
             this.buttonGrandma.Location = new System.Drawing.Point(8, 149);
-            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGrandma.Name = "buttonGrandma";
             this.buttonGrandma.Size = new System.Drawing.Size(88, 33);
             this.buttonGrandma.TabIndex = 5;
@@ -123,22 +125,37 @@
             this.labelClickerAmount.TabIndex = 6;
             this.labelClickerAmount.Text = "T";
             // 
-            // listBox1
+            // listView1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(385, 8);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(140, 173);
-            this.listBox1.TabIndex = 7;
-            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_MouseClick);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderUpgrade,
+            this.columnHeaderPrijs});
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(334, 8);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(187, 272);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
+            // 
+            // columnHeaderUpgrade
+            // 
+            this.columnHeaderUpgrade.Text = "Upgrade";
+            this.columnHeaderUpgrade.Width = 92;
+            // 
+            // columnHeaderPrijs
+            // 
+            this.columnHeaderPrijs.Text = "Prijs";
+            this.columnHeaderPrijs.Width = 91;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.labelClickerAmount);
             this.Controls.Add(this.buttonGrandma);
             this.Controls.Add(this.buttonClicker);
@@ -146,7 +163,7 @@
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPancake);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Pancake Clicker";
             this.ResumeLayout(false);
@@ -164,8 +181,10 @@
         private System.Windows.Forms.Button buttonClicker;
         private System.Windows.Forms.Button buttonGrandma;
         private System.Windows.Forms.Label labelClickerAmount;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeaderUpgrade;
+        private System.Windows.Forms.ColumnHeader columnHeaderPrijs;
     }
 }
 
