@@ -15,6 +15,7 @@ namespace PancakeLibrary
             Description = description;
             InitialPrice = initialPrice;
             InitialMoneyPerSecond = initialMoneyPerSecond;
+            Amount = 0;
         }
         public int Id { get; set; }
         public string Name { get; set; }

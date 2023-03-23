@@ -13,10 +13,12 @@ namespace PancakeLibrary
     public class PancakeManager
     {
         public decimal Money;
-        public PancakeManager()
+        private UpgradeManager UpgradeManager;
+        public PancakeManager(UpgradeManager UM)
         {
-            Money = 0;
+            Money = 250;
             OwnedBusinesses = new List<Business>();
+            UpgradeManager = UM;
         }
         public List<Business> OwnedBusinesses { get; set; }
         public void Tick()
@@ -85,13 +87,31 @@ namespace PancakeLibrary
 
         public void ButtonClick()
         {
-            Money += 1;
+            Money += UpgradeManager.ButtonClickAmount();
+        }
+
+        public void BusinessClick()
+        {
+            Money += UpgradeManager.BusinessClickAmount();
         }
 
         public void AddBusiness(Business business)
         {
             
             OwnedBusinesses.Add(business);
+        }
+
+        public bool BuyUpgrade(object OBJupgrade)
+       {
+            Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Naam == OBJupgrade);
+            if(UpgradeManager.upgrades.Contains(upgrade) && Money >= upgrade.Prijs)
+            {
+                UpgradeManager.BuyUpgrade(upgrade);
+                RemoveMoney(upgrade.Prijs);
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
