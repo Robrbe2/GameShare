@@ -98,13 +98,11 @@ namespace PancakeClicker
 
         private void LoadUpgrades()
         {
-            Upgrades upgrade = new Upgrades("Valuex2", 250);
-            upgradeManager.AddUpgrade(upgrade);
-            upgrade = new Upgrades("Stronger Grandma", 100);
-            upgradeManager.AddUpgrade(upgrade);
+            upgradeManager.AddUpgrade(new Upgrades("Valuex2", 250));
+            upgradeManager.AddUpgrade(new Upgrades("Stronger Grandma", 100));
+            upgradeManager.AddUpgrade(new Upgrades("Valuex4", 5000));
 
-            List<Upgrades> upgradesList = new List<Upgrades>(upgradeManager.Sort());
-            foreach (var item in upgradesList)
+            foreach (var item in upgradeManager.Sort())
             {
                 listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
             }

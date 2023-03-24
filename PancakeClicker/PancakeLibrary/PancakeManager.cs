@@ -26,18 +26,14 @@ namespace PancakeLibrary
             decimal moneyPerTick = 0;
             foreach (Business business in OwnedBusinesses)
             {
-                if(business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
-                {
+                if(business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex4") != null && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
+                    moneyPerTick += MPTCalc(business, 4M);
+                else if(business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
                     moneyPerTick += MPTCalc(business, 2M);
-                }
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
-                {
+                else if(business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
                     moneyPerTick += MPTCalc(business, 1.5M);
-                }
                 else
-                {
-                    moneyPerTick += MPTCalc(business);
-                }
+                    moneyPerTick += MPTCalc(business);    
             }
             AddMoney(moneyPerTick);
             return moneyPerTick;

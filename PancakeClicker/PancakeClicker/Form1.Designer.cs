@@ -132,7 +132,7 @@
             this.listView1.Location = new System.Drawing.Point(501, 12);
             this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(278, 416);
+            this.listView1.Size = new System.Drawing.Size(453, 416);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.ClientSize = new System.Drawing.Size(967, 449);
             this.Controls.Add(this.labelGrandmaAmount);
             this.Controls.Add(this.labelGrandmaMoney);
             this.Controls.Add(this.labelMoneyPerTick);
