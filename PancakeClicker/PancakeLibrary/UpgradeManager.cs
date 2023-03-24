@@ -11,6 +11,7 @@ namespace PancakeLibrary
     public class UpgradeManager
     {
         public List<Upgrades> upgrades;
+        public List<Upgrades> AvaibleUpgrades;
         public List<Upgrades> boughtUpgrades;
 
         /// <summary>
@@ -21,13 +22,21 @@ namespace PancakeLibrary
         {
             upgrades = new List<Upgrades>();
             boughtUpgrades = new List<Upgrades>();
+            AvaibleUpgrades = new List<Upgrades>();
         }
-        public bool MeetsRequirement(Upgrades upgrade)
+        /// <summary>
+        /// checks if the item meets the preset requirements
+        /// </summary>
+        /// <param name="id">the id of the item that needs to be checked</param>
+        /// <returns></returns>
+        public bool MeetsRequirement(int id)
         {
             bool meetsRequirement = false;
+            Upgrades upgrade = upgrades.Find(x => x.Id == id);
+            
             if(upgrade.Requirement != null)
             {
-                if (upgrade == boughtUpgrades.Find(x => x.Id == upgrade.Requirement))
+                if (null != boughtUpgrades.Find(x => x.Id == upgrade.Requirement))
                     meetsRequirement = true;
             }
             else
@@ -37,9 +46,9 @@ namespace PancakeLibrary
         }
         public int ButtonClickAmount()
         {
-            if (boughtUpgrades.Find(x => x.Naam == "Valuex4") != null)
+            if (boughtUpgrades.Find(x => x.Id == 3) != null)
                 return 4;
-            else if (boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
+            else if (boughtUpgrades.Find(x => x.Id == 1) != null)
                 return 2;
             else
                 return 1;
@@ -48,18 +57,19 @@ namespace PancakeLibrary
         public void AddUpgrade(Upgrades upgrade)
         {
             upgrades.Add(upgrade);
+            AvaibleUpgrades.Add(upgrade);
         }
 
         public void BuyUpgrade(Upgrades upgrade)
         {
             boughtUpgrades.Add(upgrade);
-            upgrades.Remove(upgrade);
+            AvaibleUpgrades.Remove(upgrade);
         }
 
         public List<Upgrades> Sort()
         {
-            upgrades = upgrades.OrderBy(x => x.Prijs).ToList<Upgrades>();
-            return upgrades;
+            AvaibleUpgrades = AvaibleUpgrades.OrderBy(x => x.Prijs).ToList();
+            return AvaibleUpgrades;
         }
     }
 }

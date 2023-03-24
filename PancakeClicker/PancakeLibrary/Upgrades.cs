@@ -11,13 +11,15 @@ namespace PancakeLibrary
         public int Id { get; set; }
         public string Naam { get; set; }
         public int Prijs { get; set; }
+        public decimal Multiplier { get; set; }
         public int? Requirement { get; set; }
 
-        public Upgrades(int id, string naam, int prijs, int? requiredment = null) 
+        public Upgrades(int id, string naam, int prijs, decimal multipier, int? requiredment = null) 
         {
             Id = id;
             Naam = naam;
             Prijs = prijs;
+            Multiplier = multipier;
             Requirement = requiredment;
         }
 

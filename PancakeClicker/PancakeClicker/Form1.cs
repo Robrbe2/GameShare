@@ -98,10 +98,11 @@ namespace PancakeClicker
 
         private void LoadUpgrades()
         {
-            upgradeManager.AddUpgrade(new Upgrades(1, "Valuex2", 250));
-            upgradeManager.AddUpgrade(new Upgrades(2, "Stronger Grandma", 500));
-            upgradeManager.AddUpgrade(new Upgrades(3, "Valuex4", 5000, 1));
-            upgradeManager.AddUpgrade(new Upgrades(4, "Ripped Grandma", 2500, 2));
+            upgradeManager.AddUpgrade(new Upgrades(1, "Valuex2", 100, 2));
+            upgradeManager.AddUpgrade(new Upgrades(2, "Forwards from grandma", 1000, 2));
+            upgradeManager.AddUpgrade(new Upgrades(3, "Valuex4", 500, 4, 1));
+            upgradeManager.AddUpgrade(new Upgrades(4, "Steel plated rolling pins", 5000, 4, 2));
+            upgradeManager.AddUpgrade(new Upgrades(5, "Lubricated dentures", 50000, 8, 4));
 
             foreach (var item in upgradeManager.Sort())
             {
@@ -138,7 +139,7 @@ namespace PancakeClicker
             if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
             {
                 listView1.Items.Clear();
-                foreach (var item in upgradeManager.upgrades)
+                foreach (var item in upgradeManager.Sort())
                 {
                     listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
                 }

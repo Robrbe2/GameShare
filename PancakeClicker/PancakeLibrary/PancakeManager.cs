@@ -17,7 +17,7 @@ namespace PancakeLibrary
         public AchievementsManager AchievementsManager; 
         public PancakeManager(UpgradeManager UM)
         {
-            Money = 25000;
+            Money = 0;
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
             AchievementsManager = new AchievementsManager(this);
@@ -29,14 +29,16 @@ namespace PancakeLibrary
             decimal moneyPerTick = 0;
             foreach (Business business in OwnedBusinesses)
             {
-                if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex4") != null && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
-                    moneyPerTick += MPTCalc(business, 4M);
-                else if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
-                    moneyPerTick += MPTCalc(business, 2M);
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Ripped Grandma") != null && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
-                    moneyPerTick += MPTCalc(business, 2M);
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
-                    moneyPerTick += MPTCalc(business, 1.5M);
+                if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 3) != null && UpgradeManager.MeetsRequirement(3))
+                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 3));
+                else if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 1) != null)
+                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 1));
+                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 5) != null && UpgradeManager.MeetsRequirement(5))
+                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 5));
+                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 4) != null && UpgradeManager.MeetsRequirement(4))
+                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 4));
+                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 2) != null)
+                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 2));
                 else
                     moneyPerTick += MPTCalc(business);
             }
@@ -126,12 +128,13 @@ namespace PancakeLibrary
         /// <param name="business">the business that produces the money</param>
         /// <param name="upgradeLevel">The amount the upgrades gives extra if not specified it gives a value of 1</param>
         /// <returns>A decimal with the money per tick</returns>
-        public decimal MPTCalc(Business business, decimal upgradeLevel = 1)
+        public decimal MPTCalc(Business business, Upgrades upgrade = null)
         {
             decimal moneyPerTick = 0;
             decimal moneyPerTickBusiness;
             moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-            moneyPerTickBusiness = moneyPerTickBusiness * upgradeLevel;
+            if(upgrade != null)
+                moneyPerTickBusiness *= upgrade.Multiplier;
             moneyPerTick += moneyPerTickBusiness * business.Amount;
             return moneyPerTick;
         }
