@@ -98,9 +98,10 @@ namespace PancakeClicker
 
         private void LoadUpgrades()
         {
-            upgradeManager.AddUpgrade(new Upgrades("Valuex2", 250));
-            upgradeManager.AddUpgrade(new Upgrades("Stronger Grandma", 100));
-            upgradeManager.AddUpgrade(new Upgrades("Valuex4", 5000));
+            upgradeManager.AddUpgrade(new Upgrades(1, "Valuex2", 250));
+            upgradeManager.AddUpgrade(new Upgrades(2, "Stronger Grandma", 500));
+            upgradeManager.AddUpgrade(new Upgrades(3, "Valuex4", 5000, 1));
+            upgradeManager.AddUpgrade(new Upgrades(4, "Ripped Grandma", 2500, 2));
 
             foreach (var item in upgradeManager.Sort())
             {

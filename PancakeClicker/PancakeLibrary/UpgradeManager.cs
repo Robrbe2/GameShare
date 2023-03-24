@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -21,7 +22,19 @@ namespace PancakeLibrary
             upgrades = new List<Upgrades>();
             boughtUpgrades = new List<Upgrades>();
         }
+        public bool MeetsRequirement(Upgrades upgrade)
+        {
+            bool meetsRequirement = false;
+            if(upgrade.Requirement != null)
+            {
+                if (upgrade == boughtUpgrades.Find(x => x.Id == upgrade.Requirement))
+                    meetsRequirement = true;
+            }
+            else
+                meetsRequirement = true;
 
+            return meetsRequirement;
+        }
         public int ButtonClickAmount()
         {
             if (boughtUpgrades.Find(x => x.Naam == "Valuex4") != null)
