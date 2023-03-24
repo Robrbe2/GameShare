@@ -33,7 +33,7 @@ namespace PancakeLibrary
                 else if(business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
                     moneyPerTick += MPTCalc(business, 1.5M);
                 else
-                    moneyPerTick += MPTCalc(business);    
+                    moneyPerTick += MPTCalc(business);
             }
             AddMoney(moneyPerTick);
             return moneyPerTick;

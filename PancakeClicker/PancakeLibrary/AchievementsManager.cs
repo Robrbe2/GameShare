@@ -33,6 +33,21 @@ namespace PancakeLibrary
         private void CheckMoney()
         {
             decimal money = LocalPancakeManager.Money;
+            string[] achievementNames = new string[] {
+                "Wooh my first pancake!",
+                "Now da party starts",
+                "So baked right now",
+                "Affluent bakery",
+                "Best bakery",
+                "Cosmic bakery",
+                "Galactic bakery",
+                "Universal bakery"};
+
+            int value = 1;
+            for(int i = 0; i != achievementNames.Length; i++)
+            {
+
+            }
             if (money >= 1 && OwnedAchievements.FindIndex(x => x.id == 0) < 0)
                 OwnedAchievements.Add(new Achievement(0, "Wooh my first pancake!","Have 1 pancake"));
             
