@@ -8,6 +8,9 @@ namespace PancakeLibrary
 {
     public class AchievementsManager
     {
-        
+        public List<Achievement> OwnedAchievements { get; set; }
+        public List<Achievement> AllAchievements { get; set; }
+
+
     }
 }

@@ -112,10 +112,12 @@ namespace PancakeClicker
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            labelMoneyPerTick.Text = pancakeManager.Tick().ToString();
+            labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
             labelClickerMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0])).ToString();
             labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();
+            labelGrandmaMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1])).ToString();
+            labelGrandmaAmount.Text = pancakeManager.OwnedBusinesses[1].Amount.ToString();
         }
 
         private void buttonPancake_Click(object sender, MouseEventArgs e)

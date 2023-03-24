@@ -24,25 +24,19 @@ namespace PancakeLibrary
         public decimal Tick()
         {
             decimal moneyPerTick = 0;
-            decimal moneyPerTickBusiness;
             foreach (Business business in OwnedBusinesses)
             {
                 if(business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Valuex2") != null)
                 {
-                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-                    moneyPerTickBusiness = moneyPerTickBusiness * 2;
-                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    moneyPerTick += MPTCalc(business, 2M);
                 }
                 else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Naam == "Stronger Grandma") != null)
                 {
-                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-                    moneyPerTickBusiness = moneyPerTickBusiness * 1.5M;
-                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    moneyPerTick += MPTCalc(business, 1.5M);
                 }
                 else
                 {
-                    moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
-                    moneyPerTick += moneyPerTickBusiness * business.Amount;
+                    moneyPerTick += MPTCalc(business);
                 }
             }
             AddMoney(moneyPerTick);
@@ -113,7 +107,7 @@ namespace PancakeLibrary
         }
 
         public bool BuyUpgrade(object OBJupgrade)
-       {
+        {
             Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Naam == OBJupgrade.ToString());
             if(UpgradeManager.upgrades.Contains(upgrade) && Money >= upgrade.Prijs)
             {
@@ -123,6 +117,22 @@ namespace PancakeLibrary
             }
             else
                 return false;
+        }
+
+        /// <summary>
+        /// Money Per Tick Calculator
+        /// </summary>
+        /// <param name="business">the business that produces the money</param>
+        /// <param name="upgradeLevel">The amount the upgrades gives extra if not specified it gives a value of 1</param>
+        /// <returns>A decimal with the money per tick</returns>
+        public decimal MPTCalc(Business business, decimal upgradeLevel = 1)
+        {
+            decimal moneyPerTick = 0;
+            decimal moneyPerTickBusiness;
+            moneyPerTickBusiness = business.InitialMoneyPerSecond / 10;
+            moneyPerTickBusiness = moneyPerTickBusiness * upgradeLevel;
+            moneyPerTick += moneyPerTickBusiness * business.Amount;
+            return moneyPerTick;
         }
     }
 }
