@@ -43,37 +43,17 @@ namespace PancakeLibrary
                 "Galactic bakery",
                 "Universal bakery"};
 
-            int value = 1;
+            decimal value = 1;
             for(int i = 0; i != achievementNames.Length; i++)
             {
+                if (i != 0 && i % 2 == 0)
+                    value *= 100;
+                else if (i != 0 && (i+1) % 2 == 0)
+                    value *= 1000;
 
+            if (money >= value && OwnedAchievements.FindIndex(x => x.Id == i) < 0)
+                OwnedAchievements.Add(new Achievement(i, achievementNames[i],$"Have {value} pancakes"));
             }
-            if (money >= 1 && OwnedAchievements.FindIndex(x => x.id == 0) < 0)
-                OwnedAchievements.Add(new Achievement(0, "Wooh my first pancake!","Have 1 pancake"));
-            
-            if (money >= 1000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 1000 pancakes"));
-            
-            if (money >= 100000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 100000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 1000000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 100000000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 10000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 10000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 10000 pancakes"));
-            
-            if (money >= 10000 && OwnedAchievements.FindIndex(x => x.id == 1) < 0)
-                OwnedAchievements.Add(new Achievement(1, "Now da party starts", "Have 10000 pancakes"));
         }
     }
 }

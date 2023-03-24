@@ -14,11 +14,14 @@ namespace PancakeLibrary
     {
         public decimal Money;
         private UpgradeManager UpgradeManager;
+        public AchievementsManager AchievementsManager; 
         public PancakeManager(UpgradeManager UM)
         {
             Money = 25000;
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
+            AchievementsManager = new AchievementsManager(this);
+            AchievementsManager.CheckForAchievements();
         }
         public List<Business> OwnedBusinesses { get; set; }
         public decimal Tick()
