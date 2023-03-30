@@ -23,6 +23,9 @@ namespace PancakeClicker
             pancakeManager = new PancakeManager(upgradeManager);
             LoadBusinesses();
             LoadUpgrades();
+            if(Settings.Default.LastPlayed == null)
+                Settings.Default.LastPlayed = DateTime.Now;
+            pancakeManager.IdleMoneyCalc(Settings.Default.LastPlayed);
         }
 
         private void LoadBusinesses()
@@ -114,9 +117,9 @@ namespace PancakeClicker
         {
             labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
-            labelClickerMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0])).ToString();
+            labelClickerMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0]).ToString("0.00");
             labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();
-            labelGrandmaMoney.Text = ((int)pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1])).ToString();
+            labelGrandmaMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1]).ToString("0.00");
             labelGrandmaAmount.Text = pancakeManager.OwnedBusinesses[1].Amount.ToString();
         }
 
@@ -144,6 +147,11 @@ namespace PancakeClicker
                     listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
                 }
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.LastPlayed = DateTime.Now;
         }
     }
 }

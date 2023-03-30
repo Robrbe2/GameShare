@@ -25,12 +25,12 @@ namespace PancakeClicker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection BoughtUpgrades {
+        public global::System.DateTime LastPlayed {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["BoughtUpgrades"]));
+                return ((global::System.DateTime)(this["LastPlayed"]));
             }
             set {
-                this["BoughtUpgrades"] = value;
+                this["LastPlayed"] = value;
             }
         }
     }
