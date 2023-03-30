@@ -33,5 +33,17 @@ namespace PancakeClicker.Properties {
                 this["LastPlayed"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal Money {
+            get {
+                return ((decimal)(this["Money"]));
+            }
+            set {
+                this["Money"] = value;
+            }
+        }
     }
 }

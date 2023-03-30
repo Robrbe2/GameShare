@@ -20,10 +20,10 @@ namespace PancakeClicker
         {
             InitializeComponent();
             upgradeManager = new UpgradeManager();
-            pancakeManager = new PancakeManager(upgradeManager);
+            pancakeManager = new PancakeManager(upgradeManager, Settings.Default.Money);
             LoadBusinesses();
             LoadUpgrades();
-            if(Settings.Default.LastPlayed == null)
+            if(Settings.Default.LastPlayed == null || Settings.Default.LastPlayed == DateTime.MinValue)
                 Settings.Default.LastPlayed = DateTime.Now;
             pancakeManager.IdleMoneyCalc(Settings.Default.LastPlayed);
         }
@@ -35,7 +35,8 @@ namespace PancakeClicker
                 "Pancake Clicker",
                 "A basic pancake clicker",
                 15,
-                0.1M), new Business(
+                0.1M,
+                5), new Business(
                 2,
                 "Grandma",
                 "",
@@ -151,7 +152,19 @@ namespace PancakeClicker
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            SaveSettings();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            SaveSettings();
+        }
+
+        protected void SaveSettings()
+        {
             Settings.Default.LastPlayed = DateTime.Now;
+            Settings.Default.Money = pancakeManager.Money;
+            Settings.Default.Save();
         }
     }
 }

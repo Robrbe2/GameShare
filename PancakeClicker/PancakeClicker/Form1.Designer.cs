@@ -45,6 +45,7 @@
             this.labelMoneyPerTick = new System.Windows.Forms.Label();
             this.labelGrandmaMoney = new System.Windows.Forms.Label();
             this.labelGrandmaAmount = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timer1
@@ -192,6 +193,12 @@
             this.labelGrandmaAmount.TabIndex = 12;
             this.labelGrandmaAmount.Text = "T";
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 300000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +243,7 @@
         private System.Windows.Forms.Label labelMoneyPerTick;
         private System.Windows.Forms.Label labelGrandmaMoney;
         private System.Windows.Forms.Label labelGrandmaAmount;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

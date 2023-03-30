@@ -8,14 +8,14 @@ namespace PancakeLibrary
 {
     public class Business
     {
-        public Business(int id, string name, string description, decimal initialPrice, decimal initialMoneyPerSecond)
+        public Business(int id, string name, string description, decimal initialPrice, decimal initialMoneyPerSecond, uint amount = 0)
         {
             Id = id;
             Name = name;
             Description = description;
             InitialPrice = initialPrice;
             InitialMoneyPerSecond = initialMoneyPerSecond;
-            Amount = 0;
+            Amount = amount;
         }
         public int Id { get; set; }
         public string Name { get; set; }

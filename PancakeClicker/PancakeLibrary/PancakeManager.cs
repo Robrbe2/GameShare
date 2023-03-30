@@ -15,9 +15,9 @@ namespace PancakeLibrary
         public decimal Money;
         private UpgradeManager UpgradeManager;
         public AchievementsManager AchievementsManager; 
-        public PancakeManager(UpgradeManager UM)
+        public PancakeManager(UpgradeManager UM, decimal money = 0)
         {
-            Money = 0;
+            Money = money;
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
             AchievementsManager = new AchievementsManager(this);
@@ -147,7 +147,7 @@ namespace PancakeLibrary
         {
             TimeSpan timeSinceLastPlayed = DateTime.Now - lastPlayed;
             decimal money = MoneyPerTickCalc() * (decimal)timeSinceLastPlayed.TotalSeconds;
-            money /= 10;
+            money *= 10;
             AddMoney(money);
         }
     }
