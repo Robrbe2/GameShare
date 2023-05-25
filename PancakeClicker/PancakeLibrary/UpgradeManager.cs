@@ -62,13 +62,14 @@ namespace PancakeLibrary
 
         public void BuyUpgrade(Upgrades upgrade)
         {
+            upgrade.Gotten = true;
             boughtUpgrades.Add(upgrade);
             AvaibleUpgrades.Remove(upgrade);
         }
 
         public List<Upgrades> Sort()
         {
-            AvaibleUpgrades = AvaibleUpgrades.OrderBy(x => x.Prijs).ToList();
+            AvaibleUpgrades = AvaibleUpgrades.OrderBy(x => x.Price).ToList();
             return AvaibleUpgrades;
         }
     }

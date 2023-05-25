@@ -110,7 +110,7 @@ namespace PancakeClicker
 
             foreach (var item in upgradeManager.Sort())
             {
-                listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
+                listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
             }
         }
 
@@ -145,7 +145,7 @@ namespace PancakeClicker
                 listView1.Items.Clear();
                 foreach (var item in upgradeManager.Sort())
                 {
-                    listView1.Items.Add(item.Naam).SubItems.Add(item.Prijs.ToString());
+                    listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
                 }
             }
         }

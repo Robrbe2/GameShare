@@ -44,6 +44,7 @@
     <Compile Include="Achievement.cs" />
     <Compile Include="AchievementsManager.cs" />
     <Compile Include="Business.cs" />
+    <Compile Include="SaveManager.cs" />
     <Compile Include="UpgradeManager.cs" />
     <Compile Include="PancakeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

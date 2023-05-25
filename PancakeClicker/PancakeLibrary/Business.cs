@@ -23,5 +23,11 @@ namespace PancakeLibrary
         public decimal InitialPrice { get; set; }
         public decimal InitialMoneyPerSecond { get; set; }
         public uint Amount { get; set; }
+
+        public override string ToString()
+        {
+            //Standard saving pattern
+            return $"| B | {Id} | {Name} | {Description} | {InitialPrice} | {InitialMoneyPerSecond} | {Amount} |";
+        }
     }
 }
