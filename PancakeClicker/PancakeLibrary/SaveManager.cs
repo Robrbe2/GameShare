@@ -9,13 +9,25 @@ namespace PancakeLibrary
 {
     public class SaveManager
     {
-        public SaveManager() 
+        public SaveManager(List<Business> businesses, List<Upgrades> upgrades) 
         {
-
+            Businesses = businesses;
+            Upgrades = upgrades;
         }
-
+        protected List<Business> Businesses;
+        protected List<Upgrades> Upgrades;
         public bool Save()
         {
+            StringBuilder sb = new StringBuilder();
+            foreach (Business bus in Businesses)
+            {
+                sb.AppendLine(bus.ToString());
+            }
+            foreach (Upgrades upgrades in Upgrades) 
+            { 
+                sb.AppendLine(upgrades.ToString());
+            }
+            File.WriteAllText("~/Save.txt", sb.ToString());
             return true;
         }
 

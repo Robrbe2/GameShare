@@ -16,6 +16,7 @@ namespace PancakeClicker
     {
         UpgradeManager upgradeManager;
         PancakeManager pancakeManager;
+        SaveManager saveManager;
         public Form1()
         {
             InitializeComponent();
@@ -165,6 +166,11 @@ namespace PancakeClicker
             Settings.Default.LastPlayed = DateTime.Now;
             Settings.Default.Money = pancakeManager.Money;
             Settings.Default.Save();
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            saveManager = new SaveManager(pancakeManager.OwnedBusinesses, upgradeManager.upgrades);
         }
     }
 }

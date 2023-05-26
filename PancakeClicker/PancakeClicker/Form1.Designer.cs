@@ -46,6 +46,7 @@
             this.labelGrandmaMoney = new System.Windows.Forms.Label();
             this.labelGrandmaAmount = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -56,7 +57,7 @@
             // buttonPancake
             // 
             this.buttonPancake.Location = new System.Drawing.Point(8, 8);
-            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPancake.Name = "buttonPancake";
             this.buttonPancake.Size = new System.Drawing.Size(88, 81);
             this.buttonPancake.TabIndex = 0;
@@ -98,7 +99,7 @@
             // buttonClicker
             // 
             this.buttonClicker.Location = new System.Drawing.Point(8, 112);
-            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClicker.Name = "buttonClicker";
             this.buttonClicker.Size = new System.Drawing.Size(88, 33);
             this.buttonClicker.TabIndex = 4;
@@ -111,7 +112,7 @@
             // buttonGrandma
             // 
             this.buttonGrandma.Location = new System.Drawing.Point(8, 149);
-            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGrandma.Name = "buttonGrandma";
             this.buttonGrandma.Size = new System.Drawing.Size(88, 33);
             this.buttonGrandma.TabIndex = 5;
@@ -199,11 +200,22 @@
             this.timer2.Interval = 300000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(226, 8);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.TabIndex = 13;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 292);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.labelGrandmaAmount);
             this.Controls.Add(this.labelGrandmaMoney);
             this.Controls.Add(this.labelMoneyPerTick);
@@ -216,7 +228,7 @@
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPancake);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Pancake Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -244,6 +256,7 @@
         private System.Windows.Forms.Label labelGrandmaMoney;
         private System.Windows.Forms.Label labelGrandmaAmount;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button Save;
     }
 }
 
