@@ -58,7 +58,7 @@ namespace PancakeLibrary
                             if (id.Contains('|')) { id = id.Replace('|', ' ').Trim(); }
                             Upgrades upgrade = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
                             string boolean = line.Substring(line.Length - 7, 5).Trim();
-                            if(boolean == "true") { UpgradeManager.BuyUpgrade(upgrade); }
+                            if(boolean == "True") { UpgradeManager.BuyUpgrade(upgrade); }
                         }
 
                     }
