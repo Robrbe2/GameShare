@@ -96,7 +96,7 @@ namespace PancakeLibrary
 
         public bool BuyUpgrade(object OBJupgrade)
         {
-            Upgrades upgrade = UpgradeManager.upgrades.FirstOrDefault(x => x.Name == OBJupgrade.ToString());
+            Upgrades upgrade = UpgradeManager.AvaibleUpgrades.FirstOrDefault(x => x.Name == OBJupgrade.ToString());
             if(UpgradeManager.AvaibleUpgrades.Contains(upgrade) && Money >= upgrade.Price)
             {
                 UpgradeManager.BuyUpgrade(upgrade);

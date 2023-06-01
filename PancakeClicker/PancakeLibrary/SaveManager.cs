@@ -56,16 +56,7 @@ namespace PancakeLibrary
                         {
                             string id = line.Substring(6, 3).Trim();
                             if (id.Contains('|')) { id = id.Replace('|', ' ').Trim(); }
-                            try
-                            {
-                                Upgrades upgrade1 = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
-                            }
-                            catch { }
-                            try
-                            {
-                                Upgrades upgrade2 = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
-                            }
-                            catch { }
+                            Upgrades upgrade = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
                             string boolean = line.Substring(line.Length - 7, 5).Trim();
                             if(boolean == "true") { UpgradeManager.BuyUpgrade(upgrade); }
                         }
