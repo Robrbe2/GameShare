@@ -47,7 +47,6 @@
             this.labelGrandmaAmount = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.Save = new System.Windows.Forms.Button();
-            this.ReadFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -206,23 +205,11 @@
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // ReadFile
-            // 
-            this.ReadFile.Location = new System.Drawing.Point(13, 355);
-            this.ReadFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ReadFile.Name = "ReadFile";
-            this.ReadFile.Size = new System.Drawing.Size(112, 35);
-            this.ReadFile.TabIndex = 14;
-            this.ReadFile.Text = "Read";
-            this.ReadFile.UseVisualStyleBackColor = true;
-            this.ReadFile.Click += new System.EventHandler(this.ReadFile_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 449);
-            this.Controls.Add(this.ReadFile);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.labelGrandmaAmount);
             this.Controls.Add(this.labelGrandmaMoney);
@@ -264,7 +251,6 @@
         private System.Windows.Forms.Label labelGrandmaAmount;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Button ReadFile;
     }
 }
 

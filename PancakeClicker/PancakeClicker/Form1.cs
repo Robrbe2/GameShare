@@ -25,6 +25,7 @@ namespace PancakeClicker
             saveManager = new SaveManager();
             LoadBusinesses();
             LoadUpgrades();
+            LoadData();
             if(Settings.Default.LastPlayed == null || Settings.Default.LastPlayed == DateTime.MinValue)
                 Settings.Default.LastPlayed = DateTime.Now;
             pancakeManager.IdleMoneyCalc(Settings.Default.LastPlayed);
@@ -118,7 +119,18 @@ namespace PancakeClicker
                 }
             }
         }
-
+        
+        private void LoadData()
+        {
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Read();
+            listView1.Items.Clear();
+            foreach (var item in upgradeManager.AvaibleUpgrades)
+            {
+                listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
+            }
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
@@ -183,18 +195,6 @@ namespace PancakeClicker
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
             saveManager.Save();
-        }
-
-        private void ReadFile_Click(object sender, EventArgs e)
-        {
-            saveManager.PancakeManager = pancakeManager;
-            saveManager.UpgradeManager = upgradeManager;
-            saveManager.Read();
-            listView1.Items.Clear();
-            foreach (var item in upgradeManager.AvaibleUpgrades)
-            {
-                listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
-            }
         }
     }
 }
