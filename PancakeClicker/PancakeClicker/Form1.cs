@@ -22,6 +22,7 @@ namespace PancakeClicker
             InitializeComponent();
             upgradeManager = new UpgradeManager();
             pancakeManager = new PancakeManager(upgradeManager, Settings.Default.Money);
+            saveManager = new SaveManager();
             LoadBusinesses();
             LoadUpgrades();
             if(Settings.Default.LastPlayed == null || Settings.Default.LastPlayed == DateTime.MinValue)
@@ -109,9 +110,12 @@ namespace PancakeClicker
             upgradeManager.AddUpgrade(new Upgrades(4, "Steel plated rolling pins", 5000, 4, 2));
             upgradeManager.AddUpgrade(new Upgrades(5, "Lubricated dentures", 50000, 8, 4));
 
-            foreach (var item in upgradeManager.Sort())
+            foreach (var item in upgradeManager.AvaibleUpgrades)
             {
-                listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
+                if(!item.Gotten)
+                {
+                    listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
+                }
             }
         }
 
@@ -144,7 +148,7 @@ namespace PancakeClicker
             if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
             {
                 listView1.Items.Clear();
-                foreach (var item in upgradeManager.Sort())
+                foreach (var item in upgradeManager.AvaibleUpgrades)
                 {
                     listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
                 }
@@ -154,11 +158,17 @@ namespace PancakeClicker
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
             SaveSettings();
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
         }
 
         protected void SaveSettings()
@@ -170,7 +180,21 @@ namespace PancakeClicker
 
         private void Save_Click(object sender, EventArgs e)
         {
-            saveManager = new SaveManager(pancakeManager.OwnedBusinesses, upgradeManager.upgrades);
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
+        }
+
+        private void ReadFile_Click(object sender, EventArgs e)
+        {
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Read();
+            listView1.Items.Clear();
+            foreach (var item in upgradeManager.AvaibleUpgrades)
+            {
+                listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
+            }
         }
     }
 }

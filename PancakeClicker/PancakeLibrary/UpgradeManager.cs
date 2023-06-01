@@ -10,8 +10,13 @@ namespace PancakeLibrary
 {
     public class UpgradeManager
     {
-        public List<Upgrades> upgrades;
+        /// <summary>
+        /// List of upgrades that the user hasn't bought
+        /// </summary>
         public List<Upgrades> AvaibleUpgrades;
+        /// <summary>
+        /// List of upgrades that the user has bought
+        /// </summary>
         public List<Upgrades> boughtUpgrades;
 
         /// <summary>
@@ -20,7 +25,6 @@ namespace PancakeLibrary
         /// <param name="upgrades">the upgrades that the user bought</param>
         public UpgradeManager()
         {
-            upgrades = new List<Upgrades>();
             boughtUpgrades = new List<Upgrades>();
             AvaibleUpgrades = new List<Upgrades>();
         }
@@ -32,7 +36,7 @@ namespace PancakeLibrary
         public bool MeetsRequirement(int id)
         {
             bool meetsRequirement = false;
-            Upgrades upgrade = upgrades.Find(x => x.Id == id);
+            Upgrades upgrade = AvaibleUpgrades.Find(x => x.Id == id);
             
             if(upgrade.Requirement != null)
             {
@@ -56,7 +60,6 @@ namespace PancakeLibrary
 
         public void AddUpgrade(Upgrades upgrade)
         {
-            upgrades.Add(upgrade);
             AvaibleUpgrades.Add(upgrade);
         }
 
