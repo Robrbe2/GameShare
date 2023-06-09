@@ -38,8 +38,7 @@ namespace PancakeClicker
                 "Pancake Clicker",
                 "A basic pancake clicker",
                 15,
-                0.1M,
-                5), new Business(
+                0.1M), new Business(
                 2,
                 "Grandma",
                 "",
