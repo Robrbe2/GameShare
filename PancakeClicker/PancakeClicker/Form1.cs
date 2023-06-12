@@ -132,6 +132,7 @@ namespace PancakeClicker
         }
         private void timer_Tick(object sender, EventArgs e)
         {
+            #region LabelUpdates
             labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
             labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();
@@ -177,7 +178,51 @@ namespace PancakeClicker
                 labelACMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[10], AmountCalc()).ToString("0.00");
                 labelPSCMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[11], AmountCalc()).ToString("0.00");
             }
-            
+            #endregion
+
+            #region ButtonsBold
+
+            if (pancakeManager.Money >= decimal.Parse(labelClickerMoney.Text))
+                buttonClicker.Font = new Font(buttonClicker.Font, FontStyle.Bold);
+            else
+                buttonClicker.Font = new Font(buttonClicker.Font, FontStyle.Regular);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelGrandmaMoney.Text))
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            else
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelBakerMoney.Text))
+                buttonBaker.Font = new Font(buttonBaker.Font, FontStyle.Bold);
+            else
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelFarmMoney.Text))
+                buttonFarm.Font = new Font(buttonFarm.Font, FontStyle.Bold);
+            else
+                buttonFarm.Font = new Font(buttonFarm.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelFactoryMoney.Text))
+                buttonFactory.Font = new Font(buttonFactory.Font, FontStyle.Bold);
+            else
+                buttonFactory.Font = new Font(buttonFactory.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelGrandmaMoney.Text))
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            else
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelGrandmaMoney.Text))
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            else
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            //
+            if (pancakeManager.Money >= decimal.Parse(labelGrandmaMoney.Text))
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+            else
+                buttonGrandma.Font = new Font(buttonGrandma.Font, FontStyle.Bold);
+
+            #endregion
         }
 
         private void buttonPancake_Click(object sender, MouseEventArgs e)
