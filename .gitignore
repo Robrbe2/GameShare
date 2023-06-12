@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/PancakeClicker/.vs/17ClickerGame/FileContentIndex/read.lock
+/PancakeClicker/.vs/17ClickerGame/FileContentIndex/e61f3332-a8a7-4954-8051-022f7ecc2939.vsidx
+/PancakeClicker/.vs/PancakeClicker/FileContentIndex/read.lock
