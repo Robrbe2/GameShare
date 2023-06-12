@@ -38,7 +38,7 @@ namespace PancakeLibrary
         {
             Money -= amount;
         }
-        public bool BuyBusinesses(int id, int amount)
+        public bool BuyBusinesses(int id, uint amount)
         {
             int index = GetIndex(id);
             if (index < 0)
@@ -49,14 +49,14 @@ namespace PancakeLibrary
             if (Money >= amountOwned)
             {
                 RemoveMoney(amountOwned);
-                OwnedBusinesses[index].Amount += (uint)amount;
+                OwnedBusinesses[index].Amount += amount;
                 return true;
             }
             else
                 return false;
         }
 
-        public decimal CostPriceForMany(Business ownedBusiness, int amount)
+        public decimal CostPriceForMany(Business ownedBusiness, uint amount)
         {
             decimal price = 0;
             for (int i = 0; i < amount; i++)

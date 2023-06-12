@@ -38,7 +38,7 @@ namespace PancakeLibrary
             bool meetsRequirement = false;
             Upgrades upgrade = AvaibleUpgrades.Find(x => x.Id == id);
             
-            if(upgrade.Requirement != null)
+            if(upgrade != null && upgrade.Requirement != null)
             {
                 if (null != boughtUpgrades.Find(x => x.Id == upgrade.Requirement))
                     meetsRequirement = true;

@@ -90,7 +90,7 @@ namespace PancakeClicker
                 313920000000,
                 560000000), new Business(
                 12,
-                "PanScript Console",
+                "PanScript console",
                 "",
                 9391032010000,
                 640000000)
@@ -134,10 +134,50 @@ namespace PancakeClicker
         {
             labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
-            labelClickerMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0]).ToString("0.00");
             labelClickerAmount.Text = pancakeManager.OwnedBusinesses[0].Amount.ToString();
-            labelGrandmaMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1]).ToString("0.00");
             labelGrandmaAmount.Text = pancakeManager.OwnedBusinesses[1].Amount.ToString();
+            labelBakerAmount.Text = pancakeManager.OwnedBusinesses[2].Amount.ToString();
+            labelFarmAmount.Text = pancakeManager.OwnedBusinesses[3].Amount.ToString();
+            labelFactoryAmount.Text = pancakeManager.OwnedBusinesses[4].Amount.ToString();
+            labelTempleAmount.Text = pancakeManager.OwnedBusinesses[5].Amount.ToString();
+            labelMTAmount.Text = pancakeManager.OwnedBusinesses[6].Amount.ToString();
+            labelALAmount.Text = pancakeManager.OwnedBusinesses[7].Amount.ToString();
+            labelPortalAmount.Text = pancakeManager.OwnedBusinesses[8].Amount.ToString();
+            labelTPAmount.Text = pancakeManager.OwnedBusinesses[9].Amount.ToString();
+            labelACAmount.Text = pancakeManager.OwnedBusinesses[10].Amount.ToString();
+            labelPSCAmount.Text = pancakeManager.OwnedBusinesses[11].Amount.ToString();
+
+            if(AmountCalc() == 1)
+            {
+                labelClickerMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0]).ToString("0.00");
+                labelGrandmaMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1]).ToString("0.00");
+                labelBakerMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[2]).ToString("0.00");
+                labelFarmMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[3]).ToString("0.00");
+                labelFactoryMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[4]).ToString("0.00");
+                labelTempleMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[5]).ToString("0.00");
+                labelMTMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[6]).ToString("0.00");
+                labelALMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[7]).ToString("0.00");
+                labelPortalMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[8]).ToString("0.00");
+                labelTPMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[9]).ToString("0.00");
+                labelACMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[10]).ToString("0.00");
+                labelPSCMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[11]).ToString("0.00");
+            }
+            else
+            {
+                labelClickerMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[0], AmountCalc()).ToString("0.00");
+                labelGrandmaMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[1], AmountCalc()).ToString("0.00");
+                labelBakerMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[2], AmountCalc()).ToString("0.00");
+                labelFarmMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[3], AmountCalc()).ToString("0.00");
+                labelFactoryMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[4], AmountCalc()).ToString("0.00");
+                labelTempleMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[5], AmountCalc()).ToString("0.00");
+                labelMTMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[6], AmountCalc()).ToString("0.00");
+                labelALMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[7], AmountCalc()).ToString("0.00");
+                labelPortalMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[8], AmountCalc()).ToString("0.00");
+                labelTPMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[9], AmountCalc()).ToString("0.00");
+                labelACMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[10], AmountCalc()).ToString("0.00");
+                labelPSCMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[11], AmountCalc()).ToString("0.00");
+            }
+            
         }
 
         private void buttonPancake_Click(object sender, MouseEventArgs e)
@@ -151,7 +191,7 @@ namespace PancakeClicker
                 return;
 
             Button buyButton = (Button)sender;
-            pancakeManager.BuyBusinesses(int.Parse((string)buyButton.Tag), 1) ;
+            pancakeManager.BuyBusinesses(int.Parse((string)buyButton.Tag), AmountCalc());
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
@@ -194,6 +234,20 @@ namespace PancakeClicker
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
             saveManager.Save();
+        }
+
+        private uint AmountCalc()
+        {
+            uint amount = 1;
+
+            if (radioButton2.Checked)
+                amount = 5;
+            else if (radioButton3.Checked)
+                amount = 10;
+            else if (radioButton4.Checked)
+                amount = 100;
+
+            return amount;
         }
     }
 }
