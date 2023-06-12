@@ -47,6 +47,19 @@
             this.labelGrandmaAmount = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.Save = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -56,9 +69,10 @@
             // 
             // buttonPancake
             // 
-            this.buttonPancake.Location = new System.Drawing.Point(12, 12);
+            this.buttonPancake.Location = new System.Drawing.Point(11, 11);
+            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPancake.Name = "buttonPancake";
-            this.buttonPancake.Size = new System.Drawing.Size(132, 125);
+            this.buttonPancake.Size = new System.Drawing.Size(88, 81);
             this.buttonPancake.TabIndex = 0;
             this.buttonPancake.Tag = "";
             this.buttonPancake.Text = "Pancake";
@@ -68,35 +82,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 34);
+            this.label1.Location = new System.Drawing.Point(103, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pancakes:";
             // 
             // labelMoney
             // 
             this.labelMoney.AutoSize = true;
-            this.labelMoney.Location = new System.Drawing.Point(292, 34);
+            this.labelMoney.Location = new System.Drawing.Point(198, 14);
+            this.labelMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelMoney.Size = new System.Drawing.Size(13, 13);
             this.labelMoney.TabIndex = 2;
             this.labelMoney.Text = "0";
             // 
             // labelClickerMoney
             // 
             this.labelClickerMoney.AutoSize = true;
-            this.labelClickerMoney.Location = new System.Drawing.Point(150, 172);
+            this.labelClickerMoney.Location = new System.Drawing.Point(103, 133);
+            this.labelClickerMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClickerMoney.Name = "labelClickerMoney";
-            this.labelClickerMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerMoney.Size = new System.Drawing.Size(14, 13);
             this.labelClickerMoney.TabIndex = 3;
             this.labelClickerMoney.Text = "T";
             // 
             // buttonClicker
             // 
-            this.buttonClicker.Location = new System.Drawing.Point(12, 172);
+            this.buttonClicker.Location = new System.Drawing.Point(11, 133);
+            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonClicker.Name = "buttonClicker";
-            this.buttonClicker.Size = new System.Drawing.Size(132, 51);
+            this.buttonClicker.Size = new System.Drawing.Size(88, 33);
             this.buttonClicker.TabIndex = 4;
             this.buttonClicker.Tag = "1";
             this.buttonClicker.Text = "Buy Clicker";
@@ -106,9 +124,10 @@
             // 
             // buttonGrandma
             // 
-            this.buttonGrandma.Location = new System.Drawing.Point(12, 229);
+            this.buttonGrandma.Location = new System.Drawing.Point(11, 170);
+            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonGrandma.Name = "buttonGrandma";
-            this.buttonGrandma.Size = new System.Drawing.Size(132, 51);
+            this.buttonGrandma.Size = new System.Drawing.Size(88, 33);
             this.buttonGrandma.TabIndex = 5;
             this.buttonGrandma.Tag = "2";
             this.buttonGrandma.Text = "Buy Grandma";
@@ -118,9 +137,10 @@
             // labelClickerAmount
             // 
             this.labelClickerAmount.AutoSize = true;
-            this.labelClickerAmount.Location = new System.Drawing.Point(150, 203);
+            this.labelClickerAmount.Location = new System.Drawing.Point(103, 153);
+            this.labelClickerAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClickerAmount.Name = "labelClickerAmount";
-            this.labelClickerAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerAmount.Size = new System.Drawing.Size(14, 13);
             this.labelClickerAmount.TabIndex = 6;
             this.labelClickerAmount.Text = "T";
             // 
@@ -129,12 +149,12 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderUpgrade,
             this.columnHeaderPrijs});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(501, 12);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(452, 416);
+            this.listView1.Size = new System.Drawing.Size(399, 456);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -153,38 +173,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 60);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(103, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Money per second:";
             // 
             // labelMoneyPerTick
             // 
             this.labelMoneyPerTick.AutoSize = true;
-            this.labelMoneyPerTick.Location = new System.Drawing.Point(292, 60);
-            this.labelMoneyPerTick.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMoneyPerTick.Location = new System.Drawing.Point(198, 31);
             this.labelMoneyPerTick.Name = "labelMoneyPerTick";
-            this.labelMoneyPerTick.Size = new System.Drawing.Size(18, 20);
+            this.labelMoneyPerTick.Size = new System.Drawing.Size(13, 13);
             this.labelMoneyPerTick.TabIndex = 10;
             this.labelMoneyPerTick.Text = "0";
             // 
             // labelGrandmaMoney
             // 
             this.labelGrandmaMoney.AutoSize = true;
-            this.labelGrandmaMoney.Location = new System.Drawing.Point(150, 229);
+            this.labelGrandmaMoney.Location = new System.Drawing.Point(103, 170);
+            this.labelGrandmaMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGrandmaMoney.Name = "labelGrandmaMoney";
-            this.labelGrandmaMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelGrandmaMoney.Size = new System.Drawing.Size(14, 13);
             this.labelGrandmaMoney.TabIndex = 11;
             this.labelGrandmaMoney.Text = "T";
             // 
             // labelGrandmaAmount
             // 
             this.labelGrandmaAmount.AutoSize = true;
-            this.labelGrandmaAmount.Location = new System.Drawing.Point(150, 260);
+            this.labelGrandmaAmount.Location = new System.Drawing.Point(103, 190);
+            this.labelGrandmaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGrandmaAmount.Name = "labelGrandmaAmount";
-            this.labelGrandmaAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelGrandmaAmount.Size = new System.Drawing.Size(14, 13);
             this.labelGrandmaAmount.TabIndex = 12;
             this.labelGrandmaAmount.Text = "T";
             // 
@@ -196,38 +216,92 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(13, 400);
-            this.Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Save.Location = new System.Drawing.Point(3, 496);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(112, 35);
+            this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 13;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.Save);
+            this.splitContainer1.Panel1.Controls.Add(this.labelGrandmaAmount);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonGrandma);
+            this.splitContainer1.Panel1.Controls.Add(this.labelGrandmaMoney);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonClicker);
+            this.splitContainer1.Panel1.Controls.Add(this.labelClickerAmount);
+            this.splitContainer1.Panel1.Controls.Add(this.labelMoneyPerTick);
+            this.splitContainer1.Panel1.Controls.Add(this.labelClickerMoney);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonPancake);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.labelMoney);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(833, 522);
+            this.splitContainer1.SplitterDistance = 430;
+            this.splitContainer1.TabIndex = 14;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(399, 522);
+            this.splitContainer2.SplitterDistance = 25;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.listView1);
+            this.splitContainer3.Size = new System.Drawing.Size(399, 493);
+            this.splitContainer3.SplitterDistance = 456;
+            this.splitContainer3.TabIndex = 0;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 449);
-            this.Controls.Add(this.Save);
-            this.Controls.Add(this.labelGrandmaAmount);
-            this.Controls.Add(this.labelGrandmaMoney);
-            this.Controls.Add(this.labelMoneyPerTick);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.labelClickerAmount);
-            this.Controls.Add(this.buttonGrandma);
-            this.Controls.Add(this.buttonClicker);
-            this.Controls.Add(this.labelClickerMoney);
-            this.Controls.Add(this.labelMoney);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonPancake);
+            this.ClientSize = new System.Drawing.Size(833, 522);
+            this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Pancake Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -251,6 +325,9 @@
         private System.Windows.Forms.Label labelGrandmaAmount;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
     }
 }
 
