@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,11 @@ namespace PancakeClicker
         {
             InitializeComponent();
             upgradeManager = new UpgradeManager();
-            pancakeManager = new PancakeManager(upgradeManager, Settings.Default.Money);
+            pancakeManager = new PancakeManager(upgradeManager, /*Settings.Default.Money+*/100000);
             saveManager = new SaveManager();
             LoadBusinesses();
             LoadUpgrades();
-            LoadData();
+            //LoadData();
             if(Settings.Default.LastPlayed == null || Settings.Default.LastPlayed == DateTime.MinValue)
                 Settings.Default.LastPlayed = DateTime.Now;
             pancakeManager.IdleMoneyCalc(Settings.Default.LastPlayed);
@@ -104,11 +105,11 @@ namespace PancakeClicker
 
         private void LoadUpgrades()
         {
-            upgradeManager.AddUpgrade(new Upgrades(1, "Valuex2", 100, 2));
-            upgradeManager.AddUpgrade(new Upgrades(2, "Forwards from grandma", 1000, 2));
-            upgradeManager.AddUpgrade(new Upgrades(3, "Valuex4", 500, 4, 1));
-            upgradeManager.AddUpgrade(new Upgrades(4, "Steel plated rolling pins", 5000, 4, 2));
-            upgradeManager.AddUpgrade(new Upgrades(5, "Lubricated dentures", 50000, 8, 4));
+            upgradeManager.AddUpgrade(new Upgrade(1, "Valuex2", 100, 2));
+            upgradeManager.AddUpgrade(new Upgrade(2, "Forwards from grandma", 1000, 2));
+            upgradeManager.AddUpgrade(new Upgrade(3, "Valuex4", 500, 4, 1));
+            upgradeManager.AddUpgrade(new Upgrade(4, "Steel plated rolling pins", 5000, 4, 2));
+            upgradeManager.AddUpgrade(new Upgrade(5, "Lubricated dentures", 50000, 8, 4));
 
             foreach (var item in upgradeManager.AvaibleUpgrades)
             {
@@ -147,8 +148,23 @@ namespace PancakeClicker
             labelTPAmount.Text = pancakeManager.OwnedBusinesses[9].Amount.ToString();
             labelACAmount.Text = pancakeManager.OwnedBusinesses[10].Amount.ToString();
             labelPSCAmount.Text = pancakeManager.OwnedBusinesses[11].Amount.ToString();
+            if (AmountCalc() == uint.MaxValue)
+            {
+                labelClickerMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[0], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[0])).ToString("0.00");
+                labelGrandmaMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[1], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[1])).ToString("0.00");
+                labelBakerMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[2], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[2])).ToString("0.00");
+                labelFarmMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[3], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[3])).ToString("0.00");
+                labelFactoryMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[4], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[4])).ToString("0.00");
+                labelTempleMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[5], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[5])).ToString("0.00");
+                labelMTMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[6], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[6])).ToString("0.00");
+                labelALMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[7], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[7])).ToString("0.00");
+                labelPortalMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[8], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[8])).ToString("0.00");
+                labelTPMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[9], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[9])).ToString("0.00");
+                labelACMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[10], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[10])).ToString("0.00");
+                labelPSCMoney.Text = pancakeManager.CostPriceForMany(pancakeManager.OwnedBusinesses[11], pancakeManager.GetMaximum(pancakeManager.OwnedBusinesses[11])).ToString("0.00");
 
-            if(AmountCalc() == 1)
+            }
+            else if (AmountCalc() == 1)
             {
                 labelClickerMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[0]).ToString("0.00");
                 labelGrandmaMoney.Text = pancakeManager.CostPriceForOne(pancakeManager.OwnedBusinesses[1]).ToString("0.00");
@@ -278,7 +294,14 @@ namespace PancakeClicker
                 return;
 
             Button buyButton = (Button)sender;
-            pancakeManager.BuyBusinesses(int.Parse((string)buyButton.Tag), AmountCalc());
+
+            if (AmountCalc() == uint.MaxValue)
+            {
+                Business business = pancakeManager.OwnedBusinesses.Find(x => x.Id == uint.Parse(buyButton.Tag.ToString()));
+                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), pancakeManager.GetMaximum(business));
+            }
+            else
+                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), AmountCalc());
         }
 
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
@@ -333,6 +356,8 @@ namespace PancakeClicker
                 amount = 10;
             else if (radioButton4.Checked)
                 amount = 100;
+            else if (radioButton5.Checked)
+                amount = uint.MaxValue;
 
             return amount;
         }

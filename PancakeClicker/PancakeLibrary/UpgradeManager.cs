@@ -13,11 +13,11 @@ namespace PancakeLibrary
         /// <summary>
         /// List of upgrades that the user hasn't bought
         /// </summary>
-        public List<Upgrades> AvaibleUpgrades;
+        public List<Upgrade> AvaibleUpgrades;
         /// <summary>
         /// List of upgrades that the user has bought
         /// </summary>
-        public List<Upgrades> boughtUpgrades;
+        public List<Upgrade> boughtUpgrades;
 
         /// <summary>
         /// Constructor of the upgrade manager
@@ -25,8 +25,8 @@ namespace PancakeLibrary
         /// <param name="upgrades">the upgrades that the user bought</param>
         public UpgradeManager()
         {
-            boughtUpgrades = new List<Upgrades>();
-            AvaibleUpgrades = new List<Upgrades>();
+            boughtUpgrades = new List<Upgrade>();
+            AvaibleUpgrades = new List<Upgrade>();
         }
         /// <summary>
         /// checks if the item meets the preset requirements
@@ -36,7 +36,7 @@ namespace PancakeLibrary
         public bool MeetsRequirement(int id)
         {
             bool meetsRequirement = false;
-            Upgrades upgrade = AvaibleUpgrades.Find(x => x.Id == id);
+            Upgrade upgrade = AvaibleUpgrades.Find(x => x.Id == id);
             
             if(upgrade != null && upgrade.Requirement != null)
             {
@@ -58,19 +58,19 @@ namespace PancakeLibrary
                 return 1;
         }
 
-        public void AddUpgrade(Upgrades upgrade)
+        public void AddUpgrade(Upgrade upgrade)
         {
             AvaibleUpgrades.Add(upgrade);
         }
 
-        public void BuyUpgrade(Upgrades upgrade)
+        public void BuyUpgrade(Upgrade upgrade)
         {
             upgrade.Gotten = true;
             boughtUpgrades.Add(upgrade);
             AvaibleUpgrades.Remove(upgrade);
         }
 
-        public List<Upgrades> Sort()
+        public List<Upgrade> Sort()
         {
             AvaibleUpgrades = AvaibleUpgrades.OrderBy(x => x.Price).ToList();
             return AvaibleUpgrades;

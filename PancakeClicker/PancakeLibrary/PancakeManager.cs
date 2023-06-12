@@ -58,10 +58,10 @@ namespace PancakeLibrary
 
         public decimal CostPriceForMany(Business ownedBusiness, uint amount)
         {
-            decimal price = 0;
-            for (int i = 0; i < amount; i++)
+            decimal price = CostPriceForOne(ownedBusiness); ;
+            for (int i = 1; i < amount; i++)
             {
-                price += CostPriceForOne(ownedBusiness);
+                price += (decimal)(ownedBusiness.InitialPrice * (decimal)Math.Pow(1.15, ownedBusiness.Amount+i));
             }
             return price;
         }
@@ -96,7 +96,7 @@ namespace PancakeLibrary
 
         public bool BuyUpgrade(object OBJupgrade)
         {
-            Upgrades upgrade = UpgradeManager.AvaibleUpgrades.FirstOrDefault(x => x.Name == OBJupgrade.ToString());
+            Upgrade upgrade = UpgradeManager.AvaibleUpgrades.FirstOrDefault(x => x.Name == OBJupgrade.ToString());
             if(UpgradeManager.AvaibleUpgrades.Contains(upgrade) && Money >= upgrade.Price)
             {
                 UpgradeManager.BuyUpgrade(upgrade);
@@ -113,7 +113,7 @@ namespace PancakeLibrary
         /// <param name="business">the business that produces the money</param>
         /// <param name="upgradeLevel">The amount the upgrades gives extra if not specified it gives a value of 1</param>
         /// <returns>A decimal with the money per tick</returns>
-        public decimal MPTCalc(Business business, Upgrades upgrade = null)
+        public decimal MPTCalc(Business business, Upgrade upgrade = null)
         {
             decimal moneyPerTick = 0;
             decimal moneyPerTickBusiness;
@@ -149,6 +149,23 @@ namespace PancakeLibrary
             decimal money = MoneyPerTickCalc() * (decimal)timeSinceLastPlayed.TotalSeconds;
             money *= 10;
             AddMoney(money);
+        }
+
+        public uint GetMaximum(Business ownedBusiness)
+        {
+            uint amount = 0;
+            decimal price = CostPriceForOne(ownedBusiness);
+            while (true)
+            {
+                price += (decimal)(ownedBusiness.InitialPrice * (decimal)Math.Pow(1.15, ownedBusiness.Amount + amount));
+                if (price > Money)
+                    break;
+
+                amount++;
+            }
+            if (amount == 0 && CostPriceForOne(ownedBusiness) < Money)
+                return 1;
+            return amount;
         }
     }
 }

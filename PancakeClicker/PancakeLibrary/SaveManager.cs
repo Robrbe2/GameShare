@@ -21,11 +21,11 @@ namespace PancakeLibrary
             {
                 sb.AppendLine(bus.ToString());
             }
-            foreach (Upgrades upgrades in UpgradeManager.AvaibleUpgrades) 
+            foreach (Upgrade upgrades in UpgradeManager.AvaibleUpgrades) 
             { 
                 sb.AppendLine(upgrades.ToString());
             }
-            foreach (Upgrades upgrades in UpgradeManager.boughtUpgrades)
+            foreach (Upgrade upgrades in UpgradeManager.boughtUpgrades)
             {
                 sb.AppendLine(upgrades.ToString());
             }
@@ -56,7 +56,7 @@ namespace PancakeLibrary
                         {
                             string id = line.Substring(6, 3).Trim();
                             if (id.Contains('|')) { id = id.Replace('|', ' ').Trim(); }
-                            Upgrades upgrade = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
+                            Upgrade upgrade = UpgradeManager.AvaibleUpgrades.Find(x => x.Id.ToString() == id);
                             string boolean = line.Substring(line.Length - 7, 5).Trim();
                             if(boolean == "True") { UpgradeManager.BuyUpgrade(upgrade); }
                         }

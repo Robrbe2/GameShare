@@ -30,6 +30,7 @@ namespace PancakeLibrary
         /// <summary>
         /// In de if statement word gecheckt of er genoeg geld is en je de achievement nog niet hebt
         /// </summary>
+        /// 
         private void CheckMoney()
         {
             decimal money = LocalPancakeManager.Money;
@@ -42,7 +43,6 @@ namespace PancakeLibrary
                 "Cosmic bakery",
                 "Galactic bakery",
                 "Universal bakery"};
-
             decimal value = 1;
             for(int i = 0; i != achievementNames.Length; i++)
             {
@@ -52,7 +52,7 @@ namespace PancakeLibrary
                     value *= 1000;
 
             if (money >= value && OwnedAchievements.FindIndex(x => x.Id == i) < 0)
-                OwnedAchievements.Add(new Achievement(i, achievementNames[i],$"Have {value} pancakes"));
+                OwnedAchievements.Add(new Achievement(i, achievementNames[i],$"Have {value} pancakes", true));
             }
         }
     }

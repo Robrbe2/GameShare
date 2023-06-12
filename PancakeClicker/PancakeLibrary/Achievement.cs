@@ -8,11 +8,12 @@ namespace PancakeLibrary
 {
     public class Achievement
     {
-        public Achievement(int id, string name, string description)
+        public Achievement(int id, string name, string description, bool gotten)
         {
             Id = id;
             Name = name;
             Description = description;
+            Gotten = gotten;
         }
         public int Id { get; set; }
         public string Name { get; set; }

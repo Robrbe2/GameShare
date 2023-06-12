@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace PancakeLibrary
 {
-    public class Upgrades
+    public class Upgrade
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,8 +15,8 @@ namespace PancakeLibrary
         public decimal Multiplier { get; set; }
         public int? Requirement { get; set; }
         public bool Gotten { get; set; }
-
-        public Upgrades(int id, string naam, int prijs, decimal multipier, int? requiredment = null, bool gotten = false) 
+        public List<Business> AffectedBusinesses { get; set; }
+        public Upgrade(int id, string naam, int prijs, decimal multipier, int? requiredment = null, bool gotten = false/*, List<Business> affectedBusinesses*/) 
         {
             Id = id;
             Name = naam;
@@ -24,6 +24,7 @@ namespace PancakeLibrary
             Multiplier = multipier;
             Requirement = requiredment;
             Gotten = gotten;
+            /*AffectedBusinesses = affectedBusinesses;*/
         }
 
         public override string ToString()
