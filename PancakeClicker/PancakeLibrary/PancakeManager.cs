@@ -132,11 +132,26 @@ namespace PancakeLibrary
             decimal moneyPerTick = 0;
             foreach (Business business in OwnedBusinesses)
             {
-                if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 1) != null)
+                // Upgrades for the cursors 
+                if (OwnedBusinesses.Find(x => x.Id == 1) == business && UpgradeManager.boughtUpgrades.Find(x => x.Id == 1) != null && UpgradeManager.MeetsRequirement(1))
                     if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 2) != null && UpgradeManager.MeetsRequirement(2))
                         moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 2));
                     else
                         moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 1));
+
+                // Upgrades for grandma's 👵🏼
+                else if (OwnedBusinesses.Find(x => x.Id == 2) == business && UpgradeManager.boughtUpgrades.Find(x => x.Id == 3) != null && UpgradeManager.MeetsRequirement(3))
+                    if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 4) != null && UpgradeManager.MeetsRequirement(4))
+                        if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 5) != null && UpgradeManager.MeetsRequirement(5))
+                            moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 5));
+                        else
+                            moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 4));
+                    else
+                        moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 3));
+
+                //TODO: Insert more MPTCalc for future upgrades :C
+
+                // No upgrades D:
                 else
                     moneyPerTick += MPTCalc(business);
             }

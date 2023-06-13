@@ -53,12 +53,13 @@ namespace PancakeLibrary
         /// Calculates the amount u get when u press the pancake button
         /// </summary>
         /// <returns>The amount</returns>
-        public int ButtonClickAmount()
+        public decimal ButtonClickAmount()
         {
-            if (boughtUpgrades.Find(x => x.Id == 3) != null)
-                return 4;
-            else if (boughtUpgrades.Find(x => x.Id == 1) != null)
-                return 2;
+            if (boughtUpgrades.Find(x => x.Id == 1) != null)
+                if (boughtUpgrades.Find(x => x.Id == 2) != null)
+                    return boughtUpgrades.Find(x => x.Id == 2).Multiplier;
+                else
+                    return boughtUpgrades.Find(x => x.Id == 1).Multiplier;
             else
                 return 1;
         }

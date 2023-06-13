@@ -19,11 +19,12 @@ namespace PancakeClicker
         PancakeManager pancakeManager;
         SaveManager saveManager;
         bool save = true;
+
         public Form1()
         {
             InitializeComponent();
             upgradeManager = new UpgradeManager();
-            pancakeManager = new PancakeManager(upgradeManager, /*Settings.Default.Money+*/100000);
+            pancakeManager = new PancakeManager(upgradeManager, Settings.Default.Money);
             saveManager = new SaveManager();
             LoadBusinesses();
             LoadUpgrades();
@@ -111,6 +112,8 @@ namespace PancakeClicker
             upgradeManager.AddUpgrade(new Upgrade(3, "Forwards from grandma", 1000, 2));
             upgradeManager.AddUpgrade(new Upgrade(4, "Steel plated rolling pins", 5000, 4, 3));
             upgradeManager.AddUpgrade(new Upgrade(5, "Lubricated dentures", 50000, 8, 4));
+
+            //TODO: Insert more upgrades :(
 
             foreach (var item in upgradeManager.Sort())
             {
@@ -239,31 +242,34 @@ namespace PancakeClicker
             saveManager.UpgradeManager = upgradeManager;
             if (save)
             {
-                SaveSettings();
+                SaveSettings(pancakeManager.Money);
                 saveManager.Save();
             }
             else
+            {
+                SaveSettings(0);
                 saveManager.StartOver();
+            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            SaveSettings();
+            SaveSettings(pancakeManager.Money);
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
             saveManager.Save();
         }
 
-        private void SaveSettings()
+        private void SaveSettings(decimal money)
         {
             Settings.Default.LastPlayed = DateTime.Now;
-            Settings.Default.Money = pancakeManager.Money;
+            Settings.Default.Money = money;
             Settings.Default.Save();
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            SaveSettings();
+            SaveSettings(pancakeManager.Money);
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
             saveManager.Save();
@@ -384,7 +390,10 @@ namespace PancakeClicker
             if (MessageBox.Show("Are you sure that u want to start over?", "Start over", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 save = false;
-                this.Close();
+                if (MessageBox.Show("Are you really sure that u want to start over?", "Start over", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    this.Close();
+                else
+                    save = true;
             }
             else
                 MessageBox.Show("Start over reverted", "Start over", MessageBoxButtons.OK, MessageBoxIcon.Information);
