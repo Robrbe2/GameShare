@@ -18,6 +18,7 @@ namespace PancakeClicker
         UpgradeManager upgradeManager;
         PancakeManager pancakeManager;
         SaveManager saveManager;
+        bool save = true;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace PancakeClicker
             saveManager = new SaveManager();
             LoadBusinesses();
             LoadUpgrades();
-            //LoadData();
+            LoadData();
             if(Settings.Default.LastPlayed == null || Settings.Default.LastPlayed == DateTime.MinValue)
                 Settings.Default.LastPlayed = DateTime.Now;
             pancakeManager.IdleMoneyCalc(Settings.Default.LastPlayed);
@@ -106,12 +107,12 @@ namespace PancakeClicker
         private void LoadUpgrades()
         {
             upgradeManager.AddUpgrade(new Upgrade(1, "Valuex2", 100, 2));
-            upgradeManager.AddUpgrade(new Upgrade(2, "Forwards from grandma", 1000, 2));
-            upgradeManager.AddUpgrade(new Upgrade(3, "Valuex4", 500, 4, 1));
-            upgradeManager.AddUpgrade(new Upgrade(4, "Steel plated rolling pins", 5000, 4, 2));
+            upgradeManager.AddUpgrade(new Upgrade(2, "Valuex4", 500, 4, 1));
+            upgradeManager.AddUpgrade(new Upgrade(3, "Forwards from grandma", 1000, 2));
+            upgradeManager.AddUpgrade(new Upgrade(4, "Steel plated rolling pins", 5000, 4, 3));
             upgradeManager.AddUpgrade(new Upgrade(5, "Lubricated dentures", 50000, 8, 4));
 
-            foreach (var item in upgradeManager.AvaibleUpgrades)
+            foreach (var item in upgradeManager.Sort())
             {
                 if(!item.Gotten)
                 {
@@ -225,7 +226,7 @@ namespace PancakeClicker
             if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
             {
                 listView1.Items.Clear();
-                foreach (var item in upgradeManager.AvaibleUpgrades)
+                foreach (var item in upgradeManager.Sort())
                 {
                     listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
                 }
@@ -234,10 +235,15 @@ namespace PancakeClicker
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveSettings();
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
-            saveManager.Save();
+            if (save)
+            {
+                SaveSettings();
+                saveManager.Save();
+            }
+            else
+                saveManager.StartOver();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -370,6 +376,12 @@ namespace PancakeClicker
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
             BoldButtons();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            save = false;
+            this.Close();
         }
     }
 }

@@ -65,5 +65,11 @@ namespace PancakeLibrary
                 }
             }
         }
+
+        public bool StartOver()
+        {
+            File.Delete("./Save.txt");
+            return File.Exists("./Save.txt");
+        }
     }
 }

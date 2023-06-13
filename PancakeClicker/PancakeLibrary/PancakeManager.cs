@@ -123,21 +123,20 @@ namespace PancakeLibrary
             moneyPerTick += moneyPerTickBusiness * business.Amount;
             return moneyPerTick;
         }
+        /// <summary>
+        /// Calculates the amount of money that is generated every tick
+        /// </summary>
+        /// <returns></returns>
         public decimal MoneyPerTickCalc()
         {
             decimal moneyPerTick = 0;
             foreach (Business business in OwnedBusinesses)
             {
-                if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 3) != null && UpgradeManager.MeetsRequirement(3))
-                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 3));
-                else if (business == OwnedBusinesses.Find(x => x.Id == 1) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 1) != null)
-                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 1));
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 5) != null && UpgradeManager.MeetsRequirement(5))
-                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 5));
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 4) != null && UpgradeManager.MeetsRequirement(4))
-                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 4));
-                else if (business == OwnedBusinesses.Find(x => x.Id == 2) && UpgradeManager.boughtUpgrades.Find(x => x.Id == 2) != null)
-                    moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 2));
+                if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 1) != null)
+                    if (UpgradeManager.boughtUpgrades.Find(x => x.Id == 2) != null && UpgradeManager.MeetsRequirement(2))
+                        moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 2));
+                    else
+                        moneyPerTick += MPTCalc(business, UpgradeManager.boughtUpgrades.Find(x => x.Id == 1));
                 else
                     moneyPerTick += MPTCalc(business);
             }
