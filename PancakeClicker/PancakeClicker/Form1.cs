@@ -385,7 +385,7 @@ namespace PancakeClicker
             BoldButtons();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonStartOver_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure that u want to start over?", "Start over", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
@@ -397,6 +397,11 @@ namespace PancakeClicker
             }
             else
                 MessageBox.Show("Start over reverted", "Start over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonAdd1000000Money_Click(object sender, EventArgs e)
+        {
+            pancakeManager.Money += 1000000;
         }
     }
 }

@@ -43,7 +43,7 @@
             this.buttonTP = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeaderUpgrade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.labelMoneyPerTick = new System.Windows.Forms.Label();
             this.labelGrandmaMoney = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.Save = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonStartOver = new System.Windows.Forms.Button();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -85,7 +86,7 @@
             this.labelBakerMoney = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.buttonStartOver = new System.Windows.Forms.Button();
+            this.buttonAdd1000000Money = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,6 +96,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,13 +225,13 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderUpgrade,
-            this.columnHeaderPrijs});
+            this.columnHeaderPrice});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(397, 430);
+            this.listView1.Size = new System.Drawing.Size(399, 430);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -240,10 +242,10 @@
             this.columnHeaderUpgrade.Text = "Upgrade";
             this.columnHeaderUpgrade.Width = 195;
             // 
-            // columnHeaderPrijs
+            // columnHeaderPrice
             // 
-            this.columnHeaderPrijs.Text = "Prijs";
-            this.columnHeaderPrijs.Width = 200;
+            this.columnHeaderPrice.Text = "Price";
+            this.columnHeaderPrice.Width = 200;
             // 
             // label2
             // 
@@ -359,9 +361,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1129, 504);
-            this.splitContainer1.SplitterDistance = 728;
+            this.splitContainer1.Size = new System.Drawing.Size(1133, 504);
+            this.splitContainer1.SplitterDistance = 730;
             this.splitContainer1.TabIndex = 14;
+            // 
+            // buttonStartOver
+            // 
+            this.buttonStartOver.Location = new System.Drawing.Point(84, 478);
+            this.buttonStartOver.Name = "buttonStartOver";
+            this.buttonStartOver.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartOver.TabIndex = 49;
+            this.buttonStartOver.Text = "Start Over";
+            this.buttonStartOver.UseVisualStyleBackColor = true;
+            this.buttonStartOver.Click += new System.EventHandler(this.buttonStartOver_Click);
             // 
             // radioButton5
             // 
@@ -718,7 +730,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(397, 504);
+            this.splitContainer2.Size = new System.Drawing.Size(399, 504);
             this.splitContainer2.SplitterDistance = 30;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -732,25 +744,28 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.listView1);
-            this.splitContainer3.Size = new System.Drawing.Size(397, 470);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.buttonAdd1000000Money);
+            this.splitContainer3.Size = new System.Drawing.Size(399, 470);
             this.splitContainer3.SplitterDistance = 430;
             this.splitContainer3.TabIndex = 0;
             // 
-            // buttonStartOver
+            // buttonAdd1000000Money
             // 
-            this.buttonStartOver.Location = new System.Drawing.Point(84, 478);
-            this.buttonStartOver.Name = "buttonStartOver";
-            this.buttonStartOver.Size = new System.Drawing.Size(75, 23);
-            this.buttonStartOver.TabIndex = 49;
-            this.buttonStartOver.Text = "Start Over";
-            this.buttonStartOver.UseVisualStyleBackColor = true;
-            this.buttonStartOver.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAdd1000000Money.Location = new System.Drawing.Point(394, 31);
+            this.buttonAdd1000000Money.Name = "buttonAdd1000000Money";
+            this.buttonAdd1000000Money.Size = new System.Drawing.Size(2, 2);
+            this.buttonAdd1000000Money.TabIndex = 0;
+            this.buttonAdd1000000Money.UseVisualStyleBackColor = true;
+            this.buttonAdd1000000Money.Click += new System.EventHandler(this.buttonAdd1000000Money_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 504);
+            this.ClientSize = new System.Drawing.Size(1133, 504);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -765,6 +780,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -784,7 +800,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeaderUpgrade;
-        private System.Windows.Forms.ColumnHeader columnHeaderPrijs;
+        private System.Windows.Forms.ColumnHeader columnHeaderPrice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelMoneyPerTick;
         private System.Windows.Forms.Label labelGrandmaMoney;
@@ -830,6 +846,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Button buttonStartOver;
+        private System.Windows.Forms.Button buttonAdd1000000Money;
     }
 }
 
