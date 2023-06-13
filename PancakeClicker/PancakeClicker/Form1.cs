@@ -254,7 +254,7 @@ namespace PancakeClicker
             saveManager.Save();
         }
 
-        protected void SaveSettings()
+        private void SaveSettings()
         {
             Settings.Default.LastPlayed = DateTime.Now;
             Settings.Default.Money = pancakeManager.Money;
@@ -263,6 +263,7 @@ namespace PancakeClicker
 
         private void Save_Click(object sender, EventArgs e)
         {
+            SaveSettings();
             saveManager.PancakeManager = pancakeManager;
             saveManager.UpgradeManager = upgradeManager;
             saveManager.Save();
@@ -380,8 +381,13 @@ namespace PancakeClicker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            save = false;
-            this.Close();
+            if (MessageBox.Show("Are you sure that u want to start over?", "Start over", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                save = false;
+                this.Close();
+            }
+            else
+                MessageBox.Show("Start over reverted", "Start over", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
