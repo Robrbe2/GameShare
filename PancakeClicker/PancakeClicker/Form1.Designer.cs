@@ -756,7 +756,7 @@
             // 
             this.buttonAdd1000000Money.Location = new System.Drawing.Point(394, 31);
             this.buttonAdd1000000Money.Name = "buttonAdd1000000Money";
-            this.buttonAdd1000000Money.Size = new System.Drawing.Size(2, 2);
+            this.buttonAdd1000000Money.Size = new System.Drawing.Size(1, 1);
             this.buttonAdd1000000Money.TabIndex = 0;
             this.buttonAdd1000000Money.UseVisualStyleBackColor = true;
             this.buttonAdd1000000Money.Click += new System.EventHandler(this.buttonAdd1000000Money_Click);
