@@ -196,6 +196,90 @@ namespace PancakeClicker
             }
             #endregion
 
+            BoldButtons();
+        }
+
+        private void buttonPancake_Click(object sender, MouseEventArgs e)
+        {
+            pancakeManager.ButtonClick();
+        }
+
+        private void buyBusiness_Click(object sender, EventArgs e)
+        {
+            if (sender == null)
+                return;
+
+            Button buyButton = (Button)sender;
+
+            if (AmountCalc() == uint.MaxValue)
+            {
+                Business business = pancakeManager.OwnedBusinesses.Find(x => x.Id == uint.Parse(buyButton.Tag.ToString()));
+                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), pancakeManager.GetMaximum(business));
+            }
+            else
+                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), AmountCalc());
+        }
+
+        private void listBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
+            {
+                listView1.Items.Clear();
+                foreach (var item in upgradeManager.AvaibleUpgrades)
+                {
+                    listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
+                }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSettings();
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            SaveSettings();
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
+        }
+
+        protected void SaveSettings()
+        {
+            Settings.Default.LastPlayed = DateTime.Now;
+            Settings.Default.Money = pancakeManager.Money;
+            Settings.Default.Save();
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            saveManager.PancakeManager = pancakeManager;
+            saveManager.UpgradeManager = upgradeManager;
+            saveManager.Save();
+        }
+
+        private uint AmountCalc()
+        {
+            uint amount = 1;
+
+            if (radioButton2.Checked)
+                amount = 5;
+            else if (radioButton3.Checked)
+                amount = 10;
+            else if (radioButton4.Checked)
+                amount = 100;
+            else if (radioButton5.Checked)
+                amount = uint.MaxValue;
+
+            return amount;
+        }
+
+        private void BoldButtons()
+        {
             #region ButtonsBold
 
             if (pancakeManager.Money >= decimal.Parse(labelClickerMoney.Text))
@@ -283,83 +367,9 @@ namespace PancakeClicker
             #endregion
         }
 
-        private void buttonPancake_Click(object sender, MouseEventArgs e)
+        private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
-            pancakeManager.ButtonClick();
-        }
-
-        private void buyBusiness_Click(object sender, EventArgs e)
-        {
-            if (sender == null)
-                return;
-
-            Button buyButton = (Button)sender;
-
-            if (AmountCalc() == uint.MaxValue)
-            {
-                Business business = pancakeManager.OwnedBusinesses.Find(x => x.Id == uint.Parse(buyButton.Tag.ToString()));
-                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), pancakeManager.GetMaximum(business));
-            }
-            else
-                pancakeManager.BuyBusinesses(int.Parse(buyButton.Tag.ToString()), AmountCalc());
-        }
-
-        private void listBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (pancakeManager.BuyUpgrade(listView1.SelectedItems[0].Text))
-            {
-                listView1.Items.Clear();
-                foreach (var item in upgradeManager.AvaibleUpgrades)
-                {
-                    listView1.Items.Add(item.Name).SubItems.Add(item.Price.ToString());
-                }
-            }
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveSettings();
-            saveManager.PancakeManager = pancakeManager;
-            saveManager.UpgradeManager = upgradeManager;
-            saveManager.Save();
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            SaveSettings();
-            saveManager.PancakeManager = pancakeManager;
-            saveManager.UpgradeManager = upgradeManager;
-            saveManager.Save();
-        }
-
-        protected void SaveSettings()
-        {
-            Settings.Default.LastPlayed = DateTime.Now;
-            Settings.Default.Money = pancakeManager.Money;
-            Settings.Default.Save();
-        }
-
-        private void Save_Click(object sender, EventArgs e)
-        {
-            saveManager.PancakeManager = pancakeManager;
-            saveManager.UpgradeManager = upgradeManager;
-            saveManager.Save();
-        }
-
-        private uint AmountCalc()
-        {
-            uint amount = 1;
-
-            if (radioButton2.Checked)
-                amount = 5;
-            else if (radioButton3.Checked)
-                amount = 10;
-            else if (radioButton4.Checked)
-                amount = 100;
-            else if (radioButton5.Checked)
-                amount = uint.MaxValue;
-
-            return amount;
+            BoldButtons();
         }
     }
 }

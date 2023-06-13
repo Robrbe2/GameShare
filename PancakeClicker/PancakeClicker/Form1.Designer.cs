@@ -104,9 +104,10 @@
             // 
             // buttonPancake
             // 
-            this.buttonPancake.Location = new System.Drawing.Point(16, 17);
+            this.buttonPancake.Location = new System.Drawing.Point(11, 11);
+            this.buttonPancake.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPancake.Name = "buttonPancake";
-            this.buttonPancake.Size = new System.Drawing.Size(132, 125);
+            this.buttonPancake.Size = new System.Drawing.Size(88, 81);
             this.buttonPancake.TabIndex = 0;
             this.buttonPancake.Tag = "";
             this.buttonPancake.Text = "Pancake";
@@ -116,35 +117,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 22);
+            this.label1.Location = new System.Drawing.Point(103, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pancakes:";
             // 
             // labelMoney
             // 
             this.labelMoney.AutoSize = true;
-            this.labelMoney.Location = new System.Drawing.Point(297, 22);
+            this.labelMoney.Location = new System.Drawing.Point(198, 14);
+            this.labelMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelMoney.Size = new System.Drawing.Size(13, 13);
             this.labelMoney.TabIndex = 2;
             this.labelMoney.Text = "0";
             // 
             // labelClickerMoney
             // 
             this.labelClickerMoney.AutoSize = true;
-            this.labelClickerMoney.Location = new System.Drawing.Point(256, 205);
+            this.labelClickerMoney.Location = new System.Drawing.Point(171, 133);
+            this.labelClickerMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClickerMoney.Name = "labelClickerMoney";
-            this.labelClickerMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerMoney.Size = new System.Drawing.Size(14, 13);
             this.labelClickerMoney.TabIndex = 3;
             this.labelClickerMoney.Text = "T";
             // 
             // buttonClicker
             // 
-            this.buttonClicker.Location = new System.Drawing.Point(16, 205);
+            this.buttonClicker.Location = new System.Drawing.Point(11, 133);
+            this.buttonClicker.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClicker.Name = "buttonClicker";
-            this.buttonClicker.Size = new System.Drawing.Size(225, 51);
+            this.buttonClicker.Size = new System.Drawing.Size(150, 33);
             this.buttonClicker.TabIndex = 4;
             this.buttonClicker.Tag = "1";
             this.buttonClicker.Text = "Buy Clicker";
@@ -154,9 +159,10 @@
             // 
             // buttonGrandma
             // 
-            this.buttonGrandma.Location = new System.Drawing.Point(16, 262);
+            this.buttonGrandma.Location = new System.Drawing.Point(11, 170);
+            this.buttonGrandma.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGrandma.Name = "buttonGrandma";
-            this.buttonGrandma.Size = new System.Drawing.Size(225, 51);
+            this.buttonGrandma.Size = new System.Drawing.Size(150, 33);
             this.buttonGrandma.TabIndex = 5;
             this.buttonGrandma.Tag = "2";
             this.buttonGrandma.Text = "Buy Grandma";
@@ -166,17 +172,19 @@
             // labelClickerAmount
             // 
             this.labelClickerAmount.AutoSize = true;
-            this.labelClickerAmount.Location = new System.Drawing.Point(256, 235);
+            this.labelClickerAmount.Location = new System.Drawing.Point(171, 153);
+            this.labelClickerAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClickerAmount.Name = "labelClickerAmount";
-            this.labelClickerAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelClickerAmount.Size = new System.Drawing.Size(14, 13);
             this.labelClickerAmount.TabIndex = 6;
             this.labelClickerAmount.Text = "T";
             // 
             // buttonFarm
             // 
-            this.buttonFarm.Location = new System.Drawing.Point(16, 375);
+            this.buttonFarm.Location = new System.Drawing.Point(11, 244);
+            this.buttonFarm.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFarm.Name = "buttonFarm";
-            this.buttonFarm.Size = new System.Drawing.Size(228, 51);
+            this.buttonFarm.Size = new System.Drawing.Size(152, 33);
             this.buttonFarm.TabIndex = 18;
             this.buttonFarm.Tag = "4";
             this.buttonFarm.Text = "Buy Farm";
@@ -186,9 +194,10 @@
             // 
             // buttonMT
             // 
-            this.buttonMT.Location = new System.Drawing.Point(488, 205);
+            this.buttonMT.Location = new System.Drawing.Point(325, 133);
+            this.buttonMT.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMT.Name = "buttonMT";
-            this.buttonMT.Size = new System.Drawing.Size(225, 51);
+            this.buttonMT.Size = new System.Drawing.Size(150, 33);
             this.buttonMT.TabIndex = 27;
             this.buttonMT.Tag = "7";
             this.buttonMT.Text = "Buy Magic tower";
@@ -198,9 +207,10 @@
             // 
             // buttonTP
             // 
-            this.buttonTP.Location = new System.Drawing.Point(488, 375);
+            this.buttonTP.Location = new System.Drawing.Point(325, 244);
+            this.buttonTP.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTP.Name = "buttonTP";
-            this.buttonTP.Size = new System.Drawing.Size(228, 51);
+            this.buttonTP.Size = new System.Drawing.Size(152, 33);
             this.buttonTP.TabIndex = 36;
             this.buttonTP.Tag = "10";
             this.buttonTP.Text = "Buy Time portal";
@@ -217,9 +227,8 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(629, 543);
+            this.listView1.Size = new System.Drawing.Size(420, 351);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -238,38 +247,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(103, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Money per second:";
             // 
             // labelMoneyPerTick
             // 
             this.labelMoneyPerTick.AutoSize = true;
-            this.labelMoneyPerTick.Location = new System.Drawing.Point(297, 48);
-            this.labelMoneyPerTick.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMoneyPerTick.Location = new System.Drawing.Point(198, 31);
             this.labelMoneyPerTick.Name = "labelMoneyPerTick";
-            this.labelMoneyPerTick.Size = new System.Drawing.Size(18, 20);
+            this.labelMoneyPerTick.Size = new System.Drawing.Size(13, 13);
             this.labelMoneyPerTick.TabIndex = 10;
             this.labelMoneyPerTick.Text = "0";
             // 
             // labelGrandmaMoney
             // 
             this.labelGrandmaMoney.AutoSize = true;
-            this.labelGrandmaMoney.Location = new System.Drawing.Point(256, 262);
+            this.labelGrandmaMoney.Location = new System.Drawing.Point(171, 170);
+            this.labelGrandmaMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGrandmaMoney.Name = "labelGrandmaMoney";
-            this.labelGrandmaMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelGrandmaMoney.Size = new System.Drawing.Size(14, 13);
             this.labelGrandmaMoney.TabIndex = 11;
             this.labelGrandmaMoney.Text = "T";
             // 
             // labelGrandmaAmount
             // 
             this.labelGrandmaAmount.AutoSize = true;
-            this.labelGrandmaAmount.Location = new System.Drawing.Point(256, 292);
+            this.labelGrandmaAmount.Location = new System.Drawing.Point(171, 190);
+            this.labelGrandmaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGrandmaAmount.Name = "labelGrandmaAmount";
-            this.labelGrandmaAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelGrandmaAmount.Size = new System.Drawing.Size(14, 13);
             this.labelGrandmaAmount.TabIndex = 12;
             this.labelGrandmaAmount.Text = "T";
             // 
@@ -281,10 +290,9 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(16, 569);
-            this.Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Save.Location = new System.Drawing.Point(11, 370);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(112, 35);
+            this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 13;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
@@ -294,7 +302,6 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -350,86 +357,87 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1600, 634);
-            this.splitContainer1.SplitterDistance = 965;
-            this.splitContainer1.SplitterWidth = 6;
+            this.splitContainer1.Size = new System.Drawing.Size(1067, 412);
+            this.splitContainer1.SplitterDistance = 643;
             this.splitContainer1.TabIndex = 14;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(391, 155);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton5.Location = new System.Drawing.Point(261, 101);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(94, 24);
+            this.radioButton5.Size = new System.Drawing.Size(65, 17);
             this.radioButton5.TabIndex = 48;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Buy max";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(291, 155);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton4.Location = new System.Drawing.Point(194, 101);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(92, 24);
+            this.radioButton4.Size = new System.Drawing.Size(64, 17);
             this.radioButton4.TabIndex = 47;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Buy 100";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(195, 155);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton3.Location = new System.Drawing.Point(130, 101);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(83, 24);
+            this.radioButton3.Size = new System.Drawing.Size(58, 17);
             this.radioButton3.TabIndex = 46;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Buy 10";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(108, 155);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton2.Location = new System.Drawing.Point(72, 101);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 24);
+            this.radioButton2.Size = new System.Drawing.Size(52, 17);
             this.radioButton2.TabIndex = 45;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Buy 5";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 155);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton1.Location = new System.Drawing.Point(14, 101);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 24);
+            this.radioButton1.Size = new System.Drawing.Size(52, 17);
             this.radioButton1.TabIndex = 44;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Buy 1";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButtons_CheckedChanged);
             // 
             // labelPSCAmount
             // 
             this.labelPSCAmount.AutoSize = true;
-            this.labelPSCAmount.Location = new System.Drawing.Point(728, 520);
+            this.labelPSCAmount.Location = new System.Drawing.Point(485, 338);
+            this.labelPSCAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPSCAmount.Name = "labelPSCAmount";
-            this.labelPSCAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelPSCAmount.Size = new System.Drawing.Size(14, 13);
             this.labelPSCAmount.TabIndex = 43;
             this.labelPSCAmount.Text = "T";
             // 
             // buttonPSC
             // 
-            this.buttonPSC.Location = new System.Drawing.Point(488, 489);
+            this.buttonPSC.Location = new System.Drawing.Point(325, 318);
+            this.buttonPSC.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPSC.Name = "buttonPSC";
-            this.buttonPSC.Size = new System.Drawing.Size(228, 51);
+            this.buttonPSC.Size = new System.Drawing.Size(152, 33);
             this.buttonPSC.TabIndex = 41;
             this.buttonPSC.Tag = "12";
             this.buttonPSC.Text = "Buy PanScript console";
@@ -439,26 +447,29 @@
             // labelPSCMoney
             // 
             this.labelPSCMoney.AutoSize = true;
-            this.labelPSCMoney.Location = new System.Drawing.Point(728, 489);
+            this.labelPSCMoney.Location = new System.Drawing.Point(485, 318);
+            this.labelPSCMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPSCMoney.Name = "labelPSCMoney";
-            this.labelPSCMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelPSCMoney.Size = new System.Drawing.Size(14, 13);
             this.labelPSCMoney.TabIndex = 42;
             this.labelPSCMoney.Text = "T";
             // 
             // labelACAmount
             // 
             this.labelACAmount.AutoSize = true;
-            this.labelACAmount.Location = new System.Drawing.Point(728, 463);
+            this.labelACAmount.Location = new System.Drawing.Point(485, 301);
+            this.labelACAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelACAmount.Name = "labelACAmount";
-            this.labelACAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelACAmount.Size = new System.Drawing.Size(14, 13);
             this.labelACAmount.TabIndex = 40;
             this.labelACAmount.Text = "T";
             // 
             // buttonAC
             // 
-            this.buttonAC.Location = new System.Drawing.Point(488, 432);
+            this.buttonAC.Location = new System.Drawing.Point(325, 281);
+            this.buttonAC.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAC.Name = "buttonAC";
-            this.buttonAC.Size = new System.Drawing.Size(228, 51);
+            this.buttonAC.Size = new System.Drawing.Size(152, 33);
             this.buttonAC.TabIndex = 37;
             this.buttonAC.Tag = "11";
             this.buttonAC.Text = "Buy Antipancake condenser";
@@ -468,44 +479,49 @@
             // labelACMoney
             // 
             this.labelACMoney.AutoSize = true;
-            this.labelACMoney.Location = new System.Drawing.Point(728, 432);
+            this.labelACMoney.Location = new System.Drawing.Point(485, 281);
+            this.labelACMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelACMoney.Name = "labelACMoney";
-            this.labelACMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelACMoney.Size = new System.Drawing.Size(14, 13);
             this.labelACMoney.TabIndex = 39;
             this.labelACMoney.Text = "T";
             // 
             // labelTPAmount
             // 
             this.labelTPAmount.AutoSize = true;
-            this.labelTPAmount.Location = new System.Drawing.Point(728, 406);
+            this.labelTPAmount.Location = new System.Drawing.Point(485, 264);
+            this.labelTPAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTPAmount.Name = "labelTPAmount";
-            this.labelTPAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelTPAmount.Size = new System.Drawing.Size(14, 13);
             this.labelTPAmount.TabIndex = 38;
             this.labelTPAmount.Text = "T";
             // 
             // labelTPMoney
             // 
             this.labelTPMoney.AutoSize = true;
-            this.labelTPMoney.Location = new System.Drawing.Point(728, 375);
+            this.labelTPMoney.Location = new System.Drawing.Point(485, 244);
+            this.labelTPMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTPMoney.Name = "labelTPMoney";
-            this.labelTPMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelTPMoney.Size = new System.Drawing.Size(14, 13);
             this.labelTPMoney.TabIndex = 35;
             this.labelTPMoney.Text = "T";
             // 
             // labelPortalAmount
             // 
             this.labelPortalAmount.AutoSize = true;
-            this.labelPortalAmount.Location = new System.Drawing.Point(728, 349);
+            this.labelPortalAmount.Location = new System.Drawing.Point(485, 227);
+            this.labelPortalAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPortalAmount.Name = "labelPortalAmount";
-            this.labelPortalAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelPortalAmount.Size = new System.Drawing.Size(14, 13);
             this.labelPortalAmount.TabIndex = 34;
             this.labelPortalAmount.Text = "T";
             // 
             // buttonPortal
             // 
-            this.buttonPortal.Location = new System.Drawing.Point(488, 318);
+            this.buttonPortal.Location = new System.Drawing.Point(325, 207);
+            this.buttonPortal.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPortal.Name = "buttonPortal";
-            this.buttonPortal.Size = new System.Drawing.Size(228, 51);
+            this.buttonPortal.Size = new System.Drawing.Size(152, 33);
             this.buttonPortal.TabIndex = 32;
             this.buttonPortal.Tag = "9";
             this.buttonPortal.Text = "Buy Portal";
@@ -515,26 +531,29 @@
             // labelPortalMoney
             // 
             this.labelPortalMoney.AutoSize = true;
-            this.labelPortalMoney.Location = new System.Drawing.Point(728, 318);
+            this.labelPortalMoney.Location = new System.Drawing.Point(485, 207);
+            this.labelPortalMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPortalMoney.Name = "labelPortalMoney";
-            this.labelPortalMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelPortalMoney.Size = new System.Drawing.Size(14, 13);
             this.labelPortalMoney.TabIndex = 33;
             this.labelPortalMoney.Text = "T";
             // 
             // labelALAmount
             // 
             this.labelALAmount.AutoSize = true;
-            this.labelALAmount.Location = new System.Drawing.Point(728, 292);
+            this.labelALAmount.Location = new System.Drawing.Point(485, 190);
+            this.labelALAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelALAmount.Name = "labelALAmount";
-            this.labelALAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelALAmount.Size = new System.Drawing.Size(14, 13);
             this.labelALAmount.TabIndex = 31;
             this.labelALAmount.Text = "T";
             // 
             // buttonAL
             // 
-            this.buttonAL.Location = new System.Drawing.Point(488, 262);
+            this.buttonAL.Location = new System.Drawing.Point(325, 170);
+            this.buttonAL.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAL.Name = "buttonAL";
-            this.buttonAL.Size = new System.Drawing.Size(225, 51);
+            this.buttonAL.Size = new System.Drawing.Size(150, 33);
             this.buttonAL.TabIndex = 28;
             this.buttonAL.Tag = "8";
             this.buttonAL.Text = "Buy alchemy lab";
@@ -544,44 +563,49 @@
             // labelALMoney
             // 
             this.labelALMoney.AutoSize = true;
-            this.labelALMoney.Location = new System.Drawing.Point(728, 262);
+            this.labelALMoney.Location = new System.Drawing.Point(485, 170);
+            this.labelALMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelALMoney.Name = "labelALMoney";
-            this.labelALMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelALMoney.Size = new System.Drawing.Size(14, 13);
             this.labelALMoney.TabIndex = 30;
             this.labelALMoney.Text = "T";
             // 
             // labelMTAmount
             // 
             this.labelMTAmount.AutoSize = true;
-            this.labelMTAmount.Location = new System.Drawing.Point(728, 235);
+            this.labelMTAmount.Location = new System.Drawing.Point(485, 153);
+            this.labelMTAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMTAmount.Name = "labelMTAmount";
-            this.labelMTAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelMTAmount.Size = new System.Drawing.Size(14, 13);
             this.labelMTAmount.TabIndex = 29;
             this.labelMTAmount.Text = "T";
             // 
             // labelMTMoney
             // 
             this.labelMTMoney.AutoSize = true;
-            this.labelMTMoney.Location = new System.Drawing.Point(728, 205);
+            this.labelMTMoney.Location = new System.Drawing.Point(485, 133);
+            this.labelMTMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMTMoney.Name = "labelMTMoney";
-            this.labelMTMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelMTMoney.Size = new System.Drawing.Size(14, 13);
             this.labelMTMoney.TabIndex = 26;
             this.labelMTMoney.Text = "T";
             // 
             // labelTempleAmount
             // 
             this.labelTempleAmount.AutoSize = true;
-            this.labelTempleAmount.Location = new System.Drawing.Point(256, 520);
+            this.labelTempleAmount.Location = new System.Drawing.Point(171, 338);
+            this.labelTempleAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTempleAmount.Name = "labelTempleAmount";
-            this.labelTempleAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelTempleAmount.Size = new System.Drawing.Size(14, 13);
             this.labelTempleAmount.TabIndex = 25;
             this.labelTempleAmount.Text = "T";
             // 
             // buttonTemple
             // 
-            this.buttonTemple.Location = new System.Drawing.Point(16, 489);
+            this.buttonTemple.Location = new System.Drawing.Point(11, 318);
+            this.buttonTemple.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTemple.Name = "buttonTemple";
-            this.buttonTemple.Size = new System.Drawing.Size(228, 51);
+            this.buttonTemple.Size = new System.Drawing.Size(152, 33);
             this.buttonTemple.TabIndex = 23;
             this.buttonTemple.Tag = "6";
             this.buttonTemple.Text = "Buy Temple";
@@ -591,26 +615,29 @@
             // labelTempleMoney
             // 
             this.labelTempleMoney.AutoSize = true;
-            this.labelTempleMoney.Location = new System.Drawing.Point(256, 489);
+            this.labelTempleMoney.Location = new System.Drawing.Point(171, 318);
+            this.labelTempleMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTempleMoney.Name = "labelTempleMoney";
-            this.labelTempleMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelTempleMoney.Size = new System.Drawing.Size(14, 13);
             this.labelTempleMoney.TabIndex = 24;
             this.labelTempleMoney.Text = "T";
             // 
             // labelFactoryAmount
             // 
             this.labelFactoryAmount.AutoSize = true;
-            this.labelFactoryAmount.Location = new System.Drawing.Point(256, 463);
+            this.labelFactoryAmount.Location = new System.Drawing.Point(171, 301);
+            this.labelFactoryAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFactoryAmount.Name = "labelFactoryAmount";
-            this.labelFactoryAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelFactoryAmount.Size = new System.Drawing.Size(14, 13);
             this.labelFactoryAmount.TabIndex = 22;
             this.labelFactoryAmount.Text = "T";
             // 
             // buttonFactory
             // 
-            this.buttonFactory.Location = new System.Drawing.Point(16, 432);
+            this.buttonFactory.Location = new System.Drawing.Point(11, 281);
+            this.buttonFactory.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFactory.Name = "buttonFactory";
-            this.buttonFactory.Size = new System.Drawing.Size(228, 51);
+            this.buttonFactory.Size = new System.Drawing.Size(152, 33);
             this.buttonFactory.TabIndex = 19;
             this.buttonFactory.Tag = "5";
             this.buttonFactory.Text = "Buy Factory";
@@ -620,44 +647,49 @@
             // labelFactoryMoney
             // 
             this.labelFactoryMoney.AutoSize = true;
-            this.labelFactoryMoney.Location = new System.Drawing.Point(256, 432);
+            this.labelFactoryMoney.Location = new System.Drawing.Point(171, 281);
+            this.labelFactoryMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFactoryMoney.Name = "labelFactoryMoney";
-            this.labelFactoryMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelFactoryMoney.Size = new System.Drawing.Size(14, 13);
             this.labelFactoryMoney.TabIndex = 21;
             this.labelFactoryMoney.Text = "T";
             // 
             // labelFarmAmount
             // 
             this.labelFarmAmount.AutoSize = true;
-            this.labelFarmAmount.Location = new System.Drawing.Point(256, 406);
+            this.labelFarmAmount.Location = new System.Drawing.Point(171, 264);
+            this.labelFarmAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFarmAmount.Name = "labelFarmAmount";
-            this.labelFarmAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelFarmAmount.Size = new System.Drawing.Size(14, 13);
             this.labelFarmAmount.TabIndex = 20;
             this.labelFarmAmount.Text = "T";
             // 
             // labelFarmMoney
             // 
             this.labelFarmMoney.AutoSize = true;
-            this.labelFarmMoney.Location = new System.Drawing.Point(256, 375);
+            this.labelFarmMoney.Location = new System.Drawing.Point(171, 244);
+            this.labelFarmMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFarmMoney.Name = "labelFarmMoney";
-            this.labelFarmMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelFarmMoney.Size = new System.Drawing.Size(14, 13);
             this.labelFarmMoney.TabIndex = 17;
             this.labelFarmMoney.Text = "T";
             // 
             // labelBakerAmount
             // 
             this.labelBakerAmount.AutoSize = true;
-            this.labelBakerAmount.Location = new System.Drawing.Point(256, 349);
+            this.labelBakerAmount.Location = new System.Drawing.Point(171, 227);
+            this.labelBakerAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBakerAmount.Name = "labelBakerAmount";
-            this.labelBakerAmount.Size = new System.Drawing.Size(18, 20);
+            this.labelBakerAmount.Size = new System.Drawing.Size(14, 13);
             this.labelBakerAmount.TabIndex = 16;
             this.labelBakerAmount.Text = "T";
             // 
             // buttonBaker
             // 
-            this.buttonBaker.Location = new System.Drawing.Point(16, 318);
+            this.buttonBaker.Location = new System.Drawing.Point(11, 207);
+            this.buttonBaker.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBaker.Name = "buttonBaker";
-            this.buttonBaker.Size = new System.Drawing.Size(225, 51);
+            this.buttonBaker.Size = new System.Drawing.Size(150, 33);
             this.buttonBaker.TabIndex = 14;
             this.buttonBaker.Tag = "3";
             this.buttonBaker.Text = "Buy Baker";
@@ -667,9 +699,10 @@
             // labelBakerMoney
             // 
             this.labelBakerMoney.AutoSize = true;
-            this.labelBakerMoney.Location = new System.Drawing.Point(256, 318);
+            this.labelBakerMoney.Location = new System.Drawing.Point(171, 207);
+            this.labelBakerMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBakerMoney.Name = "labelBakerMoney";
-            this.labelBakerMoney.Size = new System.Drawing.Size(18, 20);
+            this.labelBakerMoney.Size = new System.Drawing.Size(14, 13);
             this.labelBakerMoney.TabIndex = 15;
             this.labelBakerMoney.Text = "T";
             // 
@@ -677,40 +710,37 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(629, 634);
-            this.splitContainer2.SplitterDistance = 37;
-            this.splitContainer2.SplitterWidth = 6;
+            this.splitContainer2.Size = new System.Drawing.Size(420, 412);
+            this.splitContainer2.SplitterDistance = 25;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.listView1);
-            this.splitContainer3.Size = new System.Drawing.Size(629, 591);
-            this.splitContainer3.SplitterDistance = 543;
-            this.splitContainer3.SplitterWidth = 6;
+            this.splitContainer3.Size = new System.Drawing.Size(420, 383);
+            this.splitContainer3.SplitterDistance = 351;
             this.splitContainer3.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 634);
+            this.ClientSize = new System.Drawing.Size(1067, 412);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Pancake Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
