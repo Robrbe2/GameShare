@@ -137,6 +137,7 @@ namespace PancakeClicker
         }
         private void timer_Tick(object sender, EventArgs e)
         {
+            pancakeManager.AchievementsManager.CheckForAchievements();
             #region LabelUpdates
             labelMoneyPerTick.Text = (pancakeManager.Tick()*10).ToString();
             labelMoney.Text = pancakeManager.Money.ToString("0.00");
@@ -402,6 +403,11 @@ namespace PancakeClicker
         private void buttonAdd1000000Money_Click(object sender, EventArgs e)
         {
             pancakeManager.Money += 1000000;
+        }
+
+        private void achievementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

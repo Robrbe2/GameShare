@@ -21,7 +21,6 @@ namespace PancakeLibrary
             OwnedBusinesses = new List<Business>();
             UpgradeManager = UM;
             AchievementsManager = new AchievementsManager(this);
-            AchievementsManager.CheckForAchievements();
         }
         public List<Business> OwnedBusinesses { get; set; }
         public decimal Tick()
